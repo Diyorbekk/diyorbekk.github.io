@@ -2,32 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5aac031-fd38-4608-bc52-4785369610f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/img/banner.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/clients/1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/clients/10.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/clients/11.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/clients/12.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/clients/13.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/clients/2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/clients/3.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/clients/4.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/clients/5.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/clients/6.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/clients/7.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/clients/8.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/clients/9.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/collective.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/icons/icon-1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/icons/icon-2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/icons/icon-3.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/logo-black.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/plugins/helper.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/plugins/helper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/plugins/owl.theme.default.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/plugins/owl.theme.default.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/projects/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/projects/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/projects/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/projects/2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/projects/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/projects/3.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/custom.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,12 +31,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/github/diyorbekk.github.io/img/clients",
+    "last_opened_file_path": "E:/github/diyorbekk.github.io/img/projects",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\github\diyorbekk.github.io\img\projects" />
       <recent name="E:\github\diyorbekk.github.io\img\clients" />
       <recent name="E:\github\diyorbekk.github.io\img" />
       <recent name="E:\github\diyorbekk.github.io\img\icons" />
@@ -80,7 +62,7 @@
       <option name="presentableId" value="Default" />
       <updated>1683631853731</updated>
       <workItem from="1683631855091" duration="868000" />
-      <workItem from="1683637065738" duration="9605000" />
+      <workItem from="1683637065738" duration="12284000" />
     </task>
     <servers />
   </component>

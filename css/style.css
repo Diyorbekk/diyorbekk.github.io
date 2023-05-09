@@ -34,8 +34,7 @@
 ----------------------------------------------------------------------------------- */
 
 /* ======= Google fonts (Oswald & Didact Gothic) ======= */
-@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Oswald:wght@200;300;400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
 /* ======= Basic style ======= */
 html,
@@ -57,7 +56,7 @@ body {
 }
 
 body {
-    font-family: 'Didact Gothic', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.75em;
@@ -67,7 +66,7 @@ body {
 }
 
 p {
-    font-family: 'Didact Gothic', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.75em;
@@ -148,7 +147,7 @@ textarea {
     display: block;
     width: 100%;
     line-height: 1.5em;
-    font-family: 'Didact Gothic', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-weight: 400;
     color: #777;
@@ -610,7 +609,7 @@ input[type="checkbox"] {
 .dropdown-menu .dropdown-item,
 .sub-menu .dropdown-item {
     padding: 5px 15px;
-    font-family: 'Didact Gothic', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 15px;
     font-weight: 300;
     color: #272727;
@@ -1397,31 +1396,30 @@ hr {
 }
 
 .projects .item .con {
-    padding: 30px 15px;
-    position: absolute;
+    padding: 30px 35px;
+    /*position: absolute;*/
     bottom: -58px;
     left: 0;
     width: 100%;
     -webkit-transition: all .3s;
-    transition: all .3s;
-    text-align: center;
+    transition: left;
     z-index: 20;
     height: auto;
     box-sizing: border-box;
-    background: -moz-linear-gradient(top, transparent 0, rgba(0, 0, 0, .1) 2%, rgba(0, 0, 0, .75) 90%);
-    background: -webkit-linear-gradient(top, transparent 0, rgba(0, 0, 0, .01) 2%, rgba(0, 0, 0, .75) 90%);
-    background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, .01) 2%, rgba(0, 0, 0, .75) 90%);
+    background: #919191;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .projects .item .con h6,
 .projects .item .con h6 a {
     position: relative;
     color: #F50008;
-    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
     font-weight: 400;
     margin-top: 0px;
     margin-bottom: 10px;
-    letter-spacing: 5px;
     text-transform: uppercase;
 }
 
@@ -1429,12 +1427,15 @@ hr {
 .projects .item .con h5 a {
     position: relative;
     color: #fff;
-    font-size: 20px;
+    /*font-size: 20px;*/
     font-weight: 300;
     margin-top: 0px;
     margin-bottom: 10px;
-    letter-spacing: 5px;
+    /*letter-spacing: 5px;*/
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .projects .item .con p {
@@ -1839,7 +1840,7 @@ button.mfp-arrow {
     margin-bottom: 0px;
     padding-top: 7px;
     font-weight: 400;
-    font-family: 'Didact Gothic', sans-serif;
+    font-family: 'Inter', sans-serif;
     color: #F50008;
 }
 
@@ -2019,7 +2020,7 @@ button.mfp-arrow {
 .bauen-comment-section h3 {
     font-size: 16px;
     color: #F50008;
-    font-family: 'Didact Gothic', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
 }
 
@@ -2219,7 +2220,7 @@ button.mfp-arrow {
 }
 
 .main-footer .fotcont .fothead h6 {
-    font-family: 'Didact Gothic', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     position: relative;
     padding-bottom: 5px;
@@ -2737,7 +2738,7 @@ button.mfp-arrow {
     padding: 20px 60px 20px 30px;
     height: 70px;
     display: block;
-    font-family: 'Didact Gothic', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
     background: #f4f4f4;
     color: #777;
