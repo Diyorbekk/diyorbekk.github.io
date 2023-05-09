@@ -376,7 +376,7 @@ input[type="checkbox"] {
 
 @media (max-width: 768px) {
     .section-title {
-        font-size: 20px;
+        font-size: 26px;
     }
 }
 
@@ -746,6 +746,12 @@ input[type="checkbox"] {
     overflow: hidden;
 }
 
+@media screen and (max-width: 767px) {
+    .header {
+        min-height: 75vh;
+    }
+}
+
 .header .caption .o-hidden {
     display: inline-block;
 }
@@ -845,6 +851,13 @@ hr {
 .slider-fade .owl-item {
     height: 100vh;
     position: relative;
+}
+
+@media screen and (max-width: 767px) {
+    .slider .owl-item,
+    .slider-fade .owl-item {
+        height: 75vh;
+    }
 }
 
 .slider .item,
@@ -2793,7 +2806,7 @@ button.mfp-arrow {
     }
 
     .nav-scroll .logo {
-        width: 115px;
+        width: 225px;
     }
 
     .logo-img {
@@ -2923,9 +2936,9 @@ button.mfp-arrow {
     }
 
     .header .caption h1 {
-        font-size: 30px;
+        font-size: 22px;
         margin-bottom: 15px;
-        letter-spacing: 10px;
+        letter-spacing: 5px;
         line-height: 1.35em;
     }
 

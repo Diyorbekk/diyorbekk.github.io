@@ -57,8 +57,14 @@ $(function () {
             logo.attr('src', 'img/logo-black.svg');
         } else {
             if (window.location.pathname.match("index.html")) {
-                navbar.removeClass("nav-scroll");
-                logo.attr('src', 'img/logo.svg');
+                if (window.innerWidth < 768) {
+                    navbar.removeClass("nav-scroll");
+                    logo.attr('src', 'img/logo-black.svg');
+                } else {
+                    navbar.removeClass("nav-scroll");
+                    logo.attr('src', 'img/logo.svg');
+                }
+
             } else {
                 navbar.removeClass("nav-scroll");
                 logo.attr('src', 'img/logo-black.svg');
