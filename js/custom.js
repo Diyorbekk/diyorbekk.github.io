@@ -54,10 +54,16 @@ $(function () {
             logo = $(".navbar .logo> img");
         if (bodyScroll > 100) {
             navbar.addClass("nav-scroll");
-            logo.attr('src', 'img/logo.svg');
+            logo.attr('src', 'img/logo-black.svg');
         } else {
-            navbar.removeClass("nav-scroll");
-            logo.attr('src', 'img/logo.svg');
+            if (window.location.pathname.match("index.html")) {
+                navbar.removeClass("nav-scroll");
+                logo.attr('src', 'img/logo.svg');
+            } else {
+                navbar.removeClass("nav-scroll");
+                logo.attr('src', 'img/logo-black.svg');
+            }
+
         }
     });
 
@@ -206,7 +212,7 @@ $(function () {
         loop: true
         , margin: 30
         , mouseDrag: true
-        , autoplay: true
+        , autoplay: false
         , dots: false
         , responsiveClass: true
         , responsive: {
@@ -355,14 +361,17 @@ function checkMediaQuery() {
         pageSection.each(function (indx) {
             if ($(this).attr("data-background")) {
                 if ($(this).attr("data-background") === "img/slider/1.jpg") {
-                    $(this).css("background-image", "url(" + "img/slider/mobile_1.jpg" +")");
+                    $(this).css("background-image", "url(" + "img/slider/mobile_1.jpg" + ")");
                 }
             }
         });
     }
 }
+
 checkMediaQuery()
 // Add a listener for when the window resizes
 window.addEventListener('resize', checkMediaQuery);
+const data_current = document.getElementById("data_current")
+data_current.innerHTML = new Date().getFullYear();
 
 
