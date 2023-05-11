@@ -418,7 +418,7 @@ input[type="checkbox"] {
 .navbar .navbar-nav .nav-link {
     font-family: 'Oswald', sans-serif;
     font-size: 15px;
-    font-weight: 300;
+    font-weight: 600;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 4px;
@@ -1063,9 +1063,9 @@ hr {
     padding-bottom: 20px;
 }
 
-.about .about-img img:hover {
+/*.about .about-img img:hover {
     transform: scale(0.95);
-}
+}*/
 
 .about .about-img {
     position: relative;
@@ -1193,13 +1193,23 @@ hr {
     position: relative;
 }
 
+@media screen and (max-width: 767px) {
+    .services .item {
+        padding: 20px 0 40px;
+    }
+
+    .services .item:last-child {
+        padding: 20px 0;
+    }
+}
+
 .services .item:hover {
     background: #f4f4f4;
 }
 
 .services .item:hover .numb {
     color: transparent;
-    -webkit-text-stroke: 1px rgba(245, 0, 8, 0.5);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
 }
 
 .services .item h5 {
@@ -1229,8 +1239,14 @@ hr {
     bottom: 30px;
     right: 30px;
     color: transparent;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+    -webkit-text-stroke: 1px rgba(245, 0, 8, 0.5);
     line-height: 1em;
+}
+
+@media screen and (max-width: 767px) {
+    .services .item .numb {
+        bottom: 0;
+    }
 }
 
 /* line animation */
@@ -2197,7 +2213,7 @@ button.mfp-arrow {
 }
 
 .main-footer.dark {
-    background: #272727;
+    background: #111111;
     color: #fff;
 }
 
@@ -2226,24 +2242,33 @@ button.mfp-arrow {
 }
 
 .main-footer .abot .social-icon a:hover {
-    border: 1px solid #F50008;
+    border: 1px solid #e7353b;
     background: transparent;
-    color: #F50008;
+    color: #e7353b;
 }
 
 .main-footer .fothead h6 {
     margin-bottom: 0px;
     font-family: 'Oswald', sans-serif;
-    color: #F50008;
+    color: #e7353b;
     font-size: 17px;
 }
 
+/*.main-footer .fotcont .fothead h6 {*/
+/*    font-family: 'Inter', sans-serif;*/
+/*    font-weight: 400;*/
+/*    position: relative;*/
+/*    padding-bottom: 5px;*/
+/*    font-size: 16px;*/
+/*}*/
+
 .main-footer .fotcont .fothead h6 {
     font-family: 'Inter', sans-serif;
-    font-weight: 400;
+    font-weight: 600;
     position: relative;
     padding-bottom: 5px;
-    font-size: 16px;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .main-footer .fotcont .fothead h6:after {
@@ -2516,11 +2541,11 @@ button.mfp-arrow {
 }
 
 .progress-wrap::after {
-    color: #F50008;
+    color: #e7353b;
 }
 
 .progress-wrap svg.progress-circle path {
-    stroke: #F50008;
+    stroke: #e7353b;
 }
 
 /* ======= Accordion Box (for Faqs) style ======= */

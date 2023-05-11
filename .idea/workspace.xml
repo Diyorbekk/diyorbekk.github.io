@@ -2,12 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5aac031-fd38-4608-bc52-4785369610f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3d-modelling.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architecture.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/armada-center.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cotton-house.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decor-plan.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interior-design.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/planning.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/post.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/post2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/post3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/post4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prime-hotel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stonya-villa.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/urban-design.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,6 +51,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -57,6 +87,7 @@
       <updated>1683631853731</updated>
       <workItem from="1683631855091" duration="868000" />
       <workItem from="1683637065738" duration="14837000" />
+      <workItem from="1683820273757" duration="7126000" />
     </task>
     <servers />
   </component>

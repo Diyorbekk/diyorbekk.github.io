@@ -44,7 +44,7 @@ $(function () {
         scrollTime: 600,          // how long (in ms) the animation takes
         activeClass: 'active',    // class given to the active nav element
         onPageChange: null,       // function(pageIndex) that is called when page is changed
-        topOffset: -70            // offste (in px) for fixed top navigation
+        topOffset: -100            // offste (in px) for fixed top navigation
     });
 
     // Navbar scrolling background
@@ -151,7 +151,7 @@ $(function () {
         loop: true
         , margin: 30
         , mouseDrag: true
-        , autoplay: false
+        , autoplay: true
         , dots: true
         , autoplayHoverPause: true
         , smartSpeed: 1500
@@ -218,13 +218,13 @@ $(function () {
         loop: true
         , margin: 30
         , mouseDrag: true
-        , autoplay: false
+        , autoplay: true
         , dots: false
         , responsiveClass: true
         , responsive: {
             0: {
                 margin: 10
-                , items: 3
+                , items: 1.8
             }
             , 600: {
                 items: 3
