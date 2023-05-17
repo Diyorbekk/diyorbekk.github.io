@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5aac031-fd38-4608-bc52-4785369610f6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/1.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2.html" beforeDir="false" afterPath="$PROJECT_DIR$/2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.html" beforeDir="false" afterPath="$PROJECT_DIR$/3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
-    </list>
+    <list default="true" id="c06f0eda-317b-42c8-bb99-9286c82517d5" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,64 +13,66 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
         <option value="HTML File" />
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2PYR6bXLYEs3mPt7F722DFK48mT" />
+  <component name="ProjectId" id="2PsUGSnM0dLCJtbc34KEybxPaLk" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/github/diyorbekk.github.io/img/projects",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\github\diyorbekk.github.io\img\projects" />
-      <recent name="E:\github\diyorbekk.github.io\img\clients" />
-      <recent name="E:\github\diyorbekk.github.io\img" />
-      <recent name="E:\github\diyorbekk.github.io\img\icons" />
+      <recent name="E:\Diyor\Github\personal-info\vendor" />
+      <recent name="E:\Diyor\Github\personal-info\js" />
+      <recent name="E:\Diyor\Github\personal-info\images" />
+      <recent name="E:\Diyor\Github\personal-info\fonts" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/diyorbekk.github.io/index.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JavaScript Debug.index.html" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a5aac031-fd38-4608-bc52-4785369610f6" name="Changes" comment="" />
-      <created>1683631853731</created>
+      <changelist id="c06f0eda-317b-42c8-bb99-9286c82517d5" name="Default Changelist" comment="" />
+      <created>1684245186409</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1683631853731</updated>
-      <workItem from="1683631855091" duration="868000" />
-      <workItem from="1683637065738" duration="14837000" />
-      <workItem from="1683820273757" duration="7450000" />
+      <updated>1684245186409</updated>
+      <workItem from="1684245190111" duration="19195000" />
+      <workItem from="1684298471445" duration="1321000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="987" y="435" width="585" height="530" key="find.popup" timestamp="1684264563330">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="987" y="435" width="585" height="530" key="find.popup/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1684264563330" />
+    <state x="936" y="353" width="670" height="676" key="search.everywhere.popup" timestamp="1684265911458">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="936" y="353" width="670" height="676" key="search.everywhere.popup/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1684265911458" />
   </component>
 </project>

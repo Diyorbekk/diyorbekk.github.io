@@ -1,369 +1,730 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<!-- For IE -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- For Resposive Device -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- For Window Tab Color -->
+		<!-- Chrome, Firefox OS and Opera -->
+		<meta name="theme-color" content="#061948">
+		<!-- Windows Phone -->
+		<meta name="msapplication-navbutton-color" content="#061948">
+		<!-- iOS Safari -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="#061948">
+		<title>Charles-Business-Consulting HTML Template</title>
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
+		<!-- Main style sheet -->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<!-- responsive style sheet -->
+		<link rel="stylesheet" type="text/css" href="css/responsive.css">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-    <title>UZPOLITEX</title>
-    <link rel="shortcut icon" href="img/favicon.png"/>
-    <link rel="stylesheet" href="css/plugins.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
-</head>
+		<!-- Fix Internet Explorer ______________________________________-->
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="vendor/html5shiv.js"></script>
+			<script src="vendor/respond.js"></script>
+		<![endif]-->	
+	</head>
 
-<body>
-<!-- Preloader -->
-<div id="preloader"></div>
-<!-- Progress scroll totop -->
-<div class="progress-wrap cursor-pointer">
-    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
-    </svg>
-</div>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg">
-    <div class="container">
-        <!-- Logo -->
-        <a class="logo" href="index.html"> <img src="img/logo.svg" alt=""> </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
-                class="icon-bar"><i class="ti-menu"></i></span></button>
-        <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link active" href="#" data-scroll-nav="0">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" data-scroll-nav="1">О Нас</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" data-scroll-nav="2">Каталог подукции</a></li>
-                <!--                <li class="nav-item"><a class="nav-link" href="#" data-scroll-nav="3">Services</a></li>-->
-                <li class="nav-item"><a class="nav-link" href="#" data-scroll-nav="5">Контакты</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<!-- Slider -->
-<header id="home" class="header slider-fade" data-scroll-index="0">
-    <div class="owl-carousel owl-theme">
-        <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
-        <div class="text-left item bg-img" data-overlay-dark="3" data-background="img/slider/1.jpg">
-            <div class="v-bottom caption">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-7">
-                            <div class="o-hidden">
-                                <h1>ПРОИЗВОДСТВО ПОЛИПРОПИЛЕНОВЫХ
-                                    МЕШКОВ AD*STAR КОРОБЧАТОГО ТИПА</h1>
+	<body>
+		<div class="main-page-wrapper">
 
-                                <hr>
-                                <!--<p>Architecture viverra tellus nec massa dictum the euismoe.
-                                    <br>Curabitur viverra the posuere aukue velit.
-                                </p>-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--<div class="text-left item bg-img" data-overlay-dark="4" data-background="img/slider/2.jpg">
-            <div class="v-bottom caption">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-7">
-                            <div class="o-hidden">
-                                <h1>Innovate Desing in Canada</h1>
-                                <hr>
-                                <p>Architecture viverra tellus nec massa dictum the euismoe.
-                                    <br>Curabitur viverra the posuere aukue velit.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>-->
-    </div>
-</header>
-<!-- Content -->
-<div class="content-wrapper">
-    <!-- About -->
-    <section id="about" class="about section-padding mt-20" data-scroll-index="1">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 animate-box" data-animate-effect="fadeInUp">
-                    <h2 class="section-title">О компании</h2>
-                    <p>История предприятия началась в 2008 году с создания частной производственной фирмы ООО Uzpolitex
-                        Holding под руководством генерального директора Фазилбекова Ойбека Хотамбековича.</p>
+			<!-- ===================================================
+				Loading Transition
+			==================================================== -->
+			<div id="loader-wrapper">
+				<div id="loader"></div>
+			</div>
 
-                    <div class="d-md-none">
-                        <div class="about-img">
-                        <div class="img"><img src="img/about.jpg" class="img-fluid" alt=""></div>
-                        <!--<div class="about-img-2 about-buro">Canada Office</div>-->
-                    </div>
-                    </div>
-                    <div class="d-md-block d-none">
-                        <p>С этого и началась деятельность нашей компании, производство полипропиленовых мешков
-                            коробчатого
-                            типа AD*STAR.</p>
-                        <p>Предприятие имеет полный цикл производства коробчатых мешков на современном оборудовании,
-                            начиная
-                            с производства нити,
-                            полотна до выполнения требований каждого клиента. Гарантируется исполнение заказов на
-                            оборудовании таких всемирно известных компаний как STARLINGER (Австрия) и BSW
-                            (Германия).</p>
-                        <button class="butn-dark mt-15 mb-md-0 mb-20"><a href="about.html"><span>Подробнее</span></a>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-md-6 animate-box" data-animate-effect="fadeInUp">
-                    <div class="d-md-none">
-                        <p>С этого и началась деятельность нашей компании, производство полипропиленовых мешков
-                            коробчатого
-                            типа AD*STAR.</p>
-                        <p>Предприятие имеет полный цикл производства коробчатых мешков на современном оборудовании,
-                            начиная
-                            с производства нити,
-                            полотна до выполнения требований каждого клиента. Гарантируется исполнение заказов на
-                            оборудовании таких всемирно известных компаний как STARLINGER (Австрия) и BSW
-                            (Германия).</p>
-                        <button class="butn-dark mt-15 mb-md-0 mb-20"><a href="about.html"><span>Подробнее</span></a>
-                        </button>
-                    </div>
-                    <div class="d-md-block d-none about-img">
-                        <div class="img"><img src="img/about.jpg" class="img-fluid" alt=""></div>
-                        <!--<div class="about-img-2 about-buro">Canada Office</div>-->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Projects -->
-    <section id="projects" class="projects section-padding" data-scroll-index="2">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="section-title">Выпускаемая продукция</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="owl-carousel owl-theme">
-                        <div class="item">
-                            <div class="position-re o-hidden"><img src="img/projects/1.jpg" alt=""></div>
-                            <div class="con">
-                                <!--                                <h6><a href="cotton-house.html">Interior</a></h6>-->
-                                <h5 class="mb-0"><a href="1.html" class="mb-0">МЕШКИ ДЛЯ ЦЕМЕНТА</a> <a
-                                        href="1.html" class="mb-0"><i class="ti-arrow-right"></i></a></h5>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="position-re o-hidden"><img src="img/projects/2.jpg" alt=""></div>
-                            <div class="con">
-                                <!--                                <h6><a href="cotton-house.html">Interior</a></h6>-->
-                                <h5 class="mb-0"><a href="2.html" class="mb-0">МЕШКИ ДЛЯ СУХИХ СТРОИТЕЛЬНЫХ
-                                    СМЕСЕЙ</a> <a href="2.html" class="mb-0"><i
-                                        class="ti-arrow-right"></i></a></h5>
-                            </div>
+			
 
-                        </div>
-                        <div class="item">
-                            <div class="position-re o-hidden"><img src="img/projects/3.jpg" alt=""></div>
-                            <div class="con">
-                                <h5 class="mb-0"><a href="3.html" class="mb-0">МЕШКИ С ОТКРЫТЫМ ВЕРХОМ ДЛЯ
-                                    МУКИ</a> <a href="3.html" class="mb-0"><i class="ti-arrow-right"></i></a>
-                                </h5>
-                                <!--                                <h6><a href="stonya-villa.html">Urban</a></h6>-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Services -->
-    <section id="services" class="services section-padding" data-scroll-index="3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="section-title">Почему выбирают <span>«UzPolitex Holding»</span></h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="item">
-                        <a> <img src="img/icons/icon-1.svg" alt="">
-                            <h5>Быстрая доставка</h5>
-                            <div class="line"></div>
-                            <p>Быстрая доставка собственным автотранспортом и ведущими транспортными компаниями.
-                                Отгрузка железнодорожным и водным транспортом.</p>
-                            <div class="numb">01</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="item">
-                        <a> <img src="img/icons/icon-2.svg" alt="">
-                            <h5>Индивидуальный подход</h5>
-                            <div class="line"></div>
-                            <p>Индивидуальный подход к каждому клиенту. Мы заботимся о том, чтобы заказчики были
-                                довольны работой с нами и полученным результатом.</p>
-                            <div class="numb">02</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="item">
-                        <a> <img src="img/icons/icon-3.svg" alt="">
-                            <h5>Производственный цикл</h5>
-                            <div class="line"></div>
-                            <p>
-                                Предприятие имеет полный цикл производства коробчатых мешков на современном
-                                оборудовании, начиная с производства нити, полотна до выполнения требований каждого
-                                клиента.
-                            </p>
-                            <div class="numb">03</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="container" id="contact" data-scroll-index="5">
-        <div class="row">
-            <div class="col-md-12 animate-box fadeInUp animated" data-animate-effect="fadeInUp">
-                <h2 class="section-title">Нам доверяют</h2>
-            </div>
-        </div>
-    </div>
+			<!-- 
+			=============================================
+				Theme Header One
+			============================================== 
+			-->
+			<header class="header-one">
+				<div class="top-header">
+					<div class="container clearfix">
+						<div class="logo float-left"><a href="index.html"><img src="images/logo/logo.png" alt=""></a></div>
+						<div class="address-wrapper float-right">
+							<ul>
+								<li class="address">
+									<i class="icon flaticon-placeholder"></i>
+									<h6>Address:</h6>
+									<p>2A0, Queenstown St, USA.</p>
+								</li>
+								<li class="address">
+									<i class="icon flaticon-multimedia"></i>
+									<h6>Mail us:</h6>
+									<p>supporthere@mail.com</p>
+								</li>
+								<li class="quotes"><a href="#">GET A QUOTES</a></li>
+							</ul>
+						</div> <!-- /.address-wrapper -->
+					</div> <!-- /.container -->
+				</div> <!-- /.top-header -->
 
-    <!-- Clients -->
-    <section class="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 owl-carousel owl-theme">
-                    <div class="clients-logo">
-                        <a><img src="img/clients/1.svg" alt=""></a>
-                    </div>
-                    <div class="clients-logo">
-                        <a><img src="img/clients/2.svg" alt=""></a>
-                    </div>
-                    <div class="clients-logo">
-                        <a><img src="img/clients/3.svg" alt=""></a>
-                    </div>
-                    <div class="clients-logo">
-                        <a><img src="img/clients/4.svg" alt=""></a>
-                    </div>
-                    <div class="clients-logo">
-                        <a><img src="img/clients/5.svg" alt=""></a>
-                    </div>
-                    <div class="clients-logo">
-                        <a><img src="img/clients/6.svg" alt=""></a>
-                    </div>
-                    <div class="clients-logo">
-                        <a><img src="img/clients/7.svg" alt=""></a>
-                    </div>
-                    <div class="clients-logo">
-                        <a><img src="img/clients/8.svg" alt=""></a>
-                    </div>
-                    <div class="clients-logo" id="asda">
-                        <a><img src="img/clients/9.svg" alt=""></a>
-                    </div>
-                    <div class="clients-logo">
-                        <a><img src="img/clients/10.svg" alt=""></a>
-                    </div>
-                    <div class="clients-logo">
-                        <a><img src="img/clients/11.svg" alt=""></a>
-                    </div>
-                    <div class="clients-logo">
-                        <a><img src="img/clients/12.svg" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-<!-- Footer -->
-<footer class="main-footer dark">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 animate-box fadeInUp animated" data-animate-effect="fadeInUp">
-                <h2 class="section-title text-very-light-gray">Контакты</h2>
-            </div>
-            <div class="col-md-3 mb-30">
-                <div class="item fotcont">
-                    <div class="fothead">
-                        <h6>Генеральный директор</h6>
-                        <p class="text-very-light-gray">Фазилбеков Ойбек Хатамбекович</p>
-                    </div>
-                    <p class="text-very-light-gray"><a href="tel:+998 99 804 2222"></a>+998 99 804 2222</p>
-                    <p class="text-very-light-gray"><a href="tel:+998 33 804 2222"></a>+998 33 804 2222</p>
-                </div>
-            </div>
-            <div class="col-md-3 mb-30">
-                <div class="item fotcont">
-                    <div class="fothead">
-                        <h6>Отдел сбыта</h6>
-                        <p class="text-very-light-gray">Мухамедов Козимбек Шодибекович</p>
-                    </div>
-                    <p class="text-very-light-gray"><a href="tel:+998 94 663 2222"></a>+998 94 663 2222</p>
-                    <p class="text-very-light-gray"><a href="tel:+998 99 663 2222"></a>+998 99 663 2222</p>
-                </div>
-            </div>
-            <div class="col-md-3 mb-30">
-                <div class="item fotcont">
-                    <div class="fothead">
-                        <h6>Почта</h6>
-                    </div>
-                    <p class="text-very-light-gray"><a href="mailto:info@uzpolitex.uz">info@uzpolitex.uz</a></p>
-                </div>
-            </div>
-            <div class="col-md-3 mb-30">
-                <div class="item fotcont">
-                    <div class="fothead">
-                        <h6>Адрес</h6>
-                    </div>
-                    <p class="text-very-light-gray">100102, г. Ташкент, Янгихаётский р., ул. ТХАЙ, Дустлик 2, 22</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="sub-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="text-left ">
-                        <p class="text-very-light-gray">© <span id="data_current">2022</span> OOO "UzPolitex Holding",
-                            Все права защищены.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 abot">
-                    <div class="social-icon "><a href="https://www.facebook.com/Uzpolitex?mibextid=ZbWKwL"
-                                                 target="_blank"><i class="ti-facebook"></i></a> <a
-                            href="https://twitter.com/uzpolitex" target="_blank"><i class="ti-twitter"></i></a> <a
-                            href="https://www.instagram.com/uzpolitex_holding/" target="_blank"><i
-                            class="ti-instagram"></i></a> <a href="https://t.me/uzpolitex_holding"
-                                                             style="transform: rotate(90deg)" target="_blank"><i
-                            class="ti-location-arrow"></i></a>
-                    </div>
-                </div>
-                <!--<div class="col-md-4">
-                    <p class="right"><a href="#">Terms &amp; Conditions</a></p>
-                </div>-->
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- jQuery -->
-<script src="js/jquery-3.5.1.min.js"></script>
-<script src="js/jquery-migrate-3.0.0.min.js"></script>
-<script src="js/modernizr-2.6.2.min.js"></script>
-<script src="js/pace.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/scrollIt.min.js"></script>
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.stellar.min.js"></script>
-<script src="js/jquery.magnific-popup.js"></script>
-<script src="js/YouTubePopUp.js"></script>
-<script src="js/custom.js"></script>
-</body>
+				<div class="theme-menu-wrapper">
+					<div class="container">
+						<div class="bg-wrapper clearfix">
+							<!-- ============== Menu Warpper ================ -->
+					   		<div class="menu-wrapper float-left">
+					   			<nav id="mega-menu-holder" class="clearfix">
+								   <ul class="clearfix">
+									    <li class="active"><a href="#">Home</a>
+									    	<ul class="dropdown">
+									        	<li><a href="index.html">Home version one</a></li>
+									        	<li><a href="index-2.html">Home version two</a></li>
+									      </ul>
+									    </li>
+									    <li><a href="#">PAGES</a>
+									    	<ul class="dropdown">
+									    		<li><a href="about.html">About us</a></li>
+									    		<li><a href="team.html">Our team</a></li>
+									    		<li><a href="faq.html">Faq's</a></li>
+									    		<li><a href="404.html">404</a></li>
+									    		<li><a href="shop.html">Shop</a></li>
+									    		<li><a href="shop-details.html">Shop details</a></li>
+									            <li><a href="#">Third Level menu</a>
+									    			<ul>
+									    				<li><a href="#">Demo one</a></li>
+									    				<li><a href="#">Demo two</a></li>
+									    			</ul>
+									    		</li>
+									       </ul>
+									    </li>
+									    <li><a href="#">Service</a>
+									    	<ul class="dropdown">
+									        	<li><a href="service.html">Service Version one</a></li>
+									        	<li><a href="service-v2.html">Service version two</a></li>
+									        	<li><a href="service-details.html">Service Details</a></li>
+									       </ul>
+									    </li>
+									    <li><a href="#">Portfolio</a>
+									    	<ul class="dropdown">
+									        	<li><a href="project.html">project</a></li>
+									        	<li><a href="project-details.html">Project details</a></li>
+									       </ul>
+									    </li>
+									    <li><a href="#">Blog</a>
+									    	<ul class="dropdown">
+									        	<li><a href="blog.html">Blog List</a></li>
+									        	<li><a href="blog-grid.html">Blog Grid</a></li>
+									        	<li><a href="blog-details.html">Blog details</a></li>
+									       </ul>
+									    </li>
+									    <li><a href="contact.html">contact</a></li>
+								   </ul>
+								</nav> <!-- /#mega-menu-holder -->
+					   		</div> <!-- /.menu-wrapper -->
+
+					   		<div class="right-widget float-right">
+					   			<ul>
+					   				<li class="social-icon">
+					   					<ul>
+											<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+											<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+											<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+											<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+										</ul>
+					   				</li>
+					   				<li class="cart-icon">
+					   					<a href="#"><i class="flaticon-tool"></i> <span>2</span></a>
+					   				</li>
+					   				<li class="search-option">
+					   					<div class="dropdown">
+					   						<button type="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search" aria-hidden="true"></i></button>
+											<form action="#" class="dropdown-menu">
+												<input type="text" Placeholder="Enter Your Search">
+												<button><i class="fa fa-search"></i></button>
+											</form>
+					   					</div>
+					   				</li>
+					   			</ul>
+					   		</div> <!-- /.right-widget -->
+						</div> <!-- /.bg-wrapper -->
+					</div> <!-- /.container -->
+				</div> <!-- /.theme-menu-wrapper -->
+			</header> <!-- /.header-one -->
+
+			
+			<!-- 
+			=============================================
+				Theme Main Banner
+			============================================== 
+			-->
+			<div id="theme-main-banner" class="banner-one">
+				<div data-src="images/home/slide-1.jpg">
+					<div class="camera_caption">
+						<div class="container">
+							<p class="wow fadeInUp animated">The government they survive artical of fortune</p>
+							<h1 class="wow fadeInUp animated" data-wow-delay="0.2s">We IMPROVE YOUR <br>SALES EFFICIENCY</h1>
+							<a href="contact.html" class="theme-button-one wow fadeInUp animated" data-wow-delay="0.39s">CONTACT US</a>
+						</div> <!-- /.container -->
+					</div> <!-- /.camera_caption -->
+				</div>
+				<div data-src="images/home/slide-2.jpg">
+					<div class="camera_caption">
+						<div class="container">
+							<p class="wow fadeInUp animated">The government they survive artical of fortune</p>
+							<h1 class="wow fadeInUp animated" data-wow-delay="0.2s">We IMPROVE YOUR <br>SALES EFFICIENCY</h1>
+							<a href="contact.html" class="theme-button-one wow fadeInUp animated" data-wow-delay="0.39s">CONTACT US</a>
+						</div> <!-- /.container -->
+					</div> <!-- /.camera_caption -->
+				</div>
+				<div data-src="images/home/slide-3.jpg">
+					<div class="camera_caption">
+						<div class="container">
+							<p class="wow fadeInUp animated">The government they survive artical of fortune</p>
+							<h1 class="wow fadeInUp animated" data-wow-delay="0.2s">We IMPROVE YOUR <br>SALES EFFICIENCY</h1>
+							<a href="contact.html" class="theme-button-one wow fadeInUp animated" data-wow-delay="0.39s">CONTACT US</a>
+						</div> <!-- /.container -->
+					</div> <!-- /.camera_caption -->
+				</div>
+			</div> <!-- /#theme-main-banner -->
+			
+			
+			<!-- 
+			=============================================
+				Top Feature
+			============================================== 
+			-->
+			<div class="top-feature section-spacing">
+				<div class="top-features-slide">
+					<div class="item">
+						<div class="main-content" style="background:#fafafa;">
+							<img src="images/icon/1.png" alt="">
+							<h4><a href="#">Consumer Insights</a></h4>
+							<p>The east side to a deluxe apartment in move on up to the east side</p>
+						</div> <!-- /.main-content -->
+					</div> <!-- /.item -->
+					<div class="item">
+						<div class="main-content" style="background:#f6f6f6;">
+							<img src="images/icon/2.png" alt="">
+							<h4><a href="#">Emerging Ideas</a></h4>
+							<p>The east side to a deluxe apartment in move on up to the east side</p>
+						</div> <!-- /.main-content -->
+					</div> <!-- /.item -->
+					<div class="item">
+						<div class="main-content" style="background:#efefef;">
+							<img src="images/icon/3.png" alt="">
+							<h4><a href="#">Thought Leadership</a></h4>
+							<p>The east side to a deluxe apartment in move on up to the east side</p>
+						</div> <!-- /.main-content -->
+					</div> <!-- /.item -->
+					<div class="item">
+						<div class="main-content" style="background:#e9e9e9;">
+							<img src="images/icon/4.png" alt="">
+							<h4><a href="#">Marketing Goals</a></h4>
+							<p>The east side to a deluxe apartment in move on up to the east side</p>
+						</div> <!-- /.main-content -->
+					</div> <!-- /.item -->
+				</div> <!-- /.top-features-slide -->
+			</div> <!-- /.top-feature -->
+
+
+			<!-- 
+			=============================================
+				About Company
+			============================================== 
+			-->
+			<div class="about-compnay section-spacing">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-12"><img src="images/home/1.jpg" alt=""></div>
+						<div class="col-lg-6 col-12">
+							<div class="text">
+								<div class="theme-title-one">
+									<h2>About Our Company</h2>
+									<p>A tale of a fateful trip that started from this tropic port aboard this tiny ship today still wanted by the government they survive as soldiers of fortune to a deluxe apartment in the sky moving on up to the east side a family.</p>
+									<p>The government they survive as soldiers of fortune baby if you've ever wondered the east side to a deluxe apartment.</p>
+								</div> <!-- /.theme-title-one -->
+								<ul class="mission-goal clearfix">
+									<li>
+										<i class="icon flaticon-star"></i>
+										<h4>Vision</h4>
+									</li>
+									<li>
+										<i class="icon flaticon-medal"></i>
+										<h4>Missions</h4>
+									</li>
+									<li>
+										<i class="icon flaticon-target"></i>
+										<h4>Goals</h4>
+									</li>
+								</ul> <!-- /.mission-goal -->
+							</div> <!-- /.text -->
+						</div> <!-- /.col- -->
+					</div> <!-- /.row -->
+				</div> <!-- /.container -->
+			</div> <!-- /.about-compnay -->
+
+
+			<!-- 
+			=============================================
+				Feature Banner
+			============================================== 
+			-->
+			<div class="feature-banner section-spacing">
+				<div class="opacity">
+					<div class="container">
+						<h2>We provide high quality services &amp; innovative solutions for the realiable growth</h2>
+						<a href="#" class="theme-button-one">GET A QUOTES</a>
+					</div> <!-- /.container -->
+				</div> <!-- /.opacity -->
+			</div> <!-- /.feature-banner -->
+
+
+			<!-- 
+			=============================================
+				Service Style One
+			============================================== 
+			-->
+			<div class="service-style-one section-spacing">
+				<div class="container">
+					<div class="theme-title-one">
+						<h2>Our SERVICES</h2>
+						<p>A tale of a fateful trip that started from this tropic port aboard this tiny ship today stillers</p>
+					</div> <!-- /.theme-title-one -->
+					<div class="wrapper">
+						<div class="row">
+							<div class="col-xl-4 col-md-6 col-12">
+								<div class="single-service">
+									<div class="img-box"><img src="images/home/3.jpg" alt=""></div>
+									<div class="text">
+										<h5><a href="service-details.html">Business Services</a></h5>
+										<p>The tiny ship today stiller</p>
+										<a href="service-details.html" class="read-more">READ MORE <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+									</div> <!-- /.text -->
+								</div> <!-- /.single-service -->
+							</div> <!-- /.col- -->
+							<div class="col-xl-4 col-md-6 col-12">
+								<div class="single-service">
+									<div class="img-box"><img src="images/home/4.jpg" alt=""></div>
+									<div class="text">
+										<h5><a href="service-details.html">Consumer Product</a></h5>
+										<p>The tiny ship today stiller</p>
+										<a href="service-details.html" class="read-more">READ MORE <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+									</div> <!-- /.text -->
+								</div> <!-- /.single-service -->
+							</div> <!-- /.col- -->
+							<div class="col-xl-4 col-md-6 col-12">
+								<div class="single-service">
+									<div class="img-box"><img src="images/home/5.jpg" alt=""></div>
+									<div class="text">
+										<h5><a href="service-details.html">Financial Services</a></h5>
+										<p>The tiny ship today stiller</p>
+										<a href="service-details.html" class="read-more">READ MORE <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+									</div> <!-- /.text -->
+								</div> <!-- /.single-service -->
+							</div> <!-- /.col- -->
+							<div class="col-xl-4 col-md-6 col-12">
+								<div class="single-service">
+									<div class="img-box"><img src="images/home/6.jpg" alt=""></div>
+									<div class="text">
+										<h5><a href="service-details.html">Travel and Aviation</a></h5>
+										<p>The tiny ship today stiller</p>
+										<a href="service-details.html" class="read-more">READ MORE <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+									</div> <!-- /.text -->
+								</div> <!-- /.single-service -->
+							</div> <!-- /.col- -->
+							<div class="col-xl-4 col-md-6 col-12">
+								<div class="single-service">
+									<div class="img-box"><img src="images/home/7.jpg" alt=""></div>
+									<div class="text">
+										<h5><a href="service-details.html">Software Research</a></h5>
+										<p>The tiny ship today stiller</p>
+										<a href="service-details.html" class="read-more">READ MORE <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+									</div> <!-- /.text -->
+								</div> <!-- /.single-service -->
+							</div> <!-- /.col- -->
+							<div class="col-xl-4 col-md-6 col-12">
+								<div class="single-service">
+									<div class="img-box"><img src="images/home/8.jpg" alt=""></div>
+									<div class="text">
+										<h5><a href="service-details.html">Quality Resourcing</a></h5>
+										<p>The tiny ship today stiller</p>
+										<a href="service-details.html" class="read-more">READ MORE <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+									</div> <!-- /.text -->
+								</div> <!-- /.single-service -->
+							</div> <!-- /.col- -->
+						</div> <!-- /.row -->
+					</div> <!-- /.wrapper -->
+					<div class="contact-text">
+						<h4>You can also send us an email and we’ll get in touch shortly, or Call us</h4>
+						<h5><a href="#">info@support.com</a>  (or)  <a href="#">+1 234 6780 900</a></h5>
+					</div>
+				</div> <!-- /.container -->
+			</div> <!-- /.service-style-one -->
+
+
+			<!--
+			=====================================================
+				Testimonial Slider
+			=====================================================
+			-->
+			<div class="testimonial-section section-spacing">
+				<div class="overlay">
+					<div class="container">
+						<div class="wrapper">
+							<div class="bg">
+								<div class="testimonial-slider">
+									<div class="item">
+										<p>“ A tale of a fateful trip that started from this tropic port aboard this tiny ship today still wanted by the government they survive as soldiers of fortune to a deluxe apartment in the sky moving on up to the east side a family. ”</p>
+										<div class="name">
+											<h6>Shawn Michael</h6>
+											<span>Founder, Mnc Inc.</span>
+										</div> <!-- /.name -->
+									</div> <!-- /.item -->
+									<div class="item">
+										<p>“ A tale of a fateful trip that started from this tropic port aboard this tiny ship today still wanted by the government they survive as soldiers of fortune to a deluxe apartment in the sky moving on up to the east side a family. ”</p>
+										<div class="name">
+											<h6>Rashed Ka.</h6>
+											<span>Founder, Mnc Inc.</span>
+										</div> <!-- /.name -->
+									</div> <!-- /.item -->
+									<div class="item">
+										<p>“ A tale of a fateful trip that started from this tropic port aboard this tiny ship today still wanted by the government they survive as soldiers of fortune to a deluxe apartment in the sky moving on up to the east side a family. ”</p>
+										<div class="name">
+											<h6>Mahfuz Riad</h6>
+											<span>Founder, Mnc Inc.</span>
+										</div> <!-- /.name -->
+									</div> <!-- /.item -->
+								</div> <!-- /.testimonial-slider -->
+							</div> <!-- /.bg -->
+						</div> <!-- /.wrapper -->
+					</div> <!-- /.container -->
+				</div> <!-- /.overlay -->
+			</div> <!-- /.testimonial-section -->
+
+
+			<!--
+			=====================================================
+				Our Team
+			=====================================================
+			-->
+			<div class="our-team section-spacing">
+				<div class="container">
+					<div class="theme-title-one">
+						<h2>Our TEAM</h2>
+						<p>A tale of a fateful trip that started from this tropic port aboard this tiny ship today stillers</p>
+					</div> <!-- /.theme-title-one -->
+					<div class="wrapper">
+						<div class="row">
+							<div class="col-lg-3 col-sm-6 col-12">
+								<div class="team-member">
+									<div class="image-box">
+										<img src="images/team/1.jpg" alt="">
+										<div class="overlay">
+											<div class="hover-content">
+												<ul>
+													<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+													<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+													<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+												</ul>
+												<p>The government they survive as soldiers of fortune.</p>
+											</div> <!-- /.hover-content -->
+										</div> <!-- /.overlay -->
+									</div> <!-- /.image-box -->
+									<div class="text">
+										<h6>Richards Mills</h6>
+										<span>Sales Consultant</span>
+									</div> <!-- /.text -->
+								</div> <!-- /.team-member -->
+							</div> <!-- /.col- -->
+							<div class="col-lg-3 col-sm-6 col-12">
+								<div class="team-member">
+									<div class="image-box">
+										<img src="images/team/2.jpg" alt="">
+										<div class="overlay">
+											<div class="hover-content">
+												<ul>
+													<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+													<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+													<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+												</ul>
+												<p>The government they survive as soldiers of fortune.</p>
+											</div> <!-- /.hover-content -->
+										</div> <!-- /.overlay -->
+									</div> <!-- /.image-box -->
+									<div class="text">
+										<h6>Mike Hussey</h6>
+										<span>Founder, CEO</span>
+									</div> <!-- /.text -->
+								</div> <!-- /.team-member -->
+							</div> <!-- /.col- -->
+							<div class="col-lg-3 col-sm-6 col-12">
+								<div class="team-member">
+									<div class="image-box">
+										<img src="images/team/3.jpg" alt="">
+										<div class="overlay">
+											<div class="hover-content">
+												<ul>
+													<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+													<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+													<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+												</ul>
+												<p>The government they survive as soldiers of fortune.</p>
+											</div> <!-- /.hover-content -->
+										</div> <!-- /.overlay -->
+									</div> <!-- /.image-box -->
+									<div class="text">
+										<h6>Jenilia D’sosa</h6>
+										<span>Marketing Lead</span>
+									</div> <!-- /.text -->
+								</div> <!-- /.team-member -->
+							</div> <!-- /.col- -->
+							<div class="col-lg-3 col-sm-6 col-12">
+								<div class="team-member">
+									<div class="image-box">
+										<img src="images/team/4.jpg" alt="">
+										<div class="overlay">
+											<div class="hover-content">
+												<ul>
+													<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+													<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+													<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+												</ul>
+												<p>The government they survive as soldiers of fortune.</p>
+											</div> <!-- /.hover-content -->
+										</div> <!-- /.overlay -->
+									</div> <!-- /.image-box -->
+									<div class="text">
+										<h6>David Warner</h6>
+										<span>SEO Analyst</span>
+									</div> <!-- /.text -->
+								</div> <!-- /.team-member -->
+							</div> <!-- /.col- -->
+						</div> <!-- /.row -->
+					</div> <!-- /.wrapper -->
+				</div> <!-- /.container -->
+			</div> <!-- /.our-team -->
+
+
+			<!--
+			=====================================================
+				Theme Counter
+			=====================================================
+			-->
+			<div class="theme-counter section-spacing">
+				<div class="container">
+					<div class="bg">
+						<h6>Company Success</h6>
+						<h2>Some fun facts about our consulting</h2>
+
+						<div class="cunter-wrapper">
+							<div class="row">
+								<div class="col-md-3 col-6">
+									<div class="single-counter-box">
+				        				<div class="number"><span class="timer" data-from="0" data-to="30" data-speed="1200" data-refresh-interval="5">0</span>+</div>
+				        				<p>Years of Excellence</p>
+				        			</div> <!-- /.single-counter-box -->
+								</div>  <!-- /.col- -->
+								<div class="col-md-3 col-6">
+									<div class="single-counter-box">
+				        				<div class="number"><span class="timer" data-from="0" data-to="100" data-speed="1200" data-refresh-interval="5">0</span>%</div>
+				        				<p>Client Satisfaction</p>
+				        			</div> <!-- /.single-counter-box -->
+								</div>  <!-- /.col- -->
+								<div class="col-md-3 col-6">
+									<div class="single-counter-box">
+				        				<div class="number"><span class="timer" data-from="0" data-to="53" data-speed="1200" data-refresh-interval="5">0</span>k</div>
+				        				<p>Cases Completed</p>
+				        			</div> <!-- /.single-counter-box -->
+								</div>  <!-- /.col- -->
+								<div class="col-md-3 col-6">
+									<div class="single-counter-box">
+				        				<div class="number"><span class="timer" data-from="0" data-to="24" data-speed="1200" data-refresh-interval="5">0</span></div>
+				        				<p>Consultants</p>
+				        			</div> <!-- /.single-counter-box -->
+								</div>  <!-- /.col- -->
+							</div> <!-- /.row -->
+						</div> <!-- /.cunter-wrapper -->
+						<a href="#" class="theme-button-one">VIEW CASE STUDIES</a>
+					</div> <!-- /.bg -->
+				</div> <!-- /.container -->
+			</div> <!-- /.theme-counter -->
+
+
+			<!--
+			=====================================================
+				Free Consultation
+			=====================================================
+			-->
+			<div class="consultation-form section-spacing">
+				<div class="container">
+					<div class="theme-title-one">
+						<h2>FREE CONSULTATION</h2>
+						<p>A tale of a fateful trip that started from this tropic port aboard this tiny ship today stillers</p>
+					</div> <!-- /.theme-title-one -->
+					<div class="clearfix main-content no-gutters row">
+						<div class="col-xl-6 col-lg-5 col-12"><div class="img-box"></div></div>
+						<div class="col-xl-6 col-lg-7 col-12">
+							<div class="form-wrapper">
+								<form action="#" class="theme-form-one">
+									<div class="row">
+										<div class="col-md-6"><input type="text" placeholder="Name *"></div>
+										<div class="col-md-6"><input type="text" placeholder="Phone *"></div>
+										<div class="col-md-6"><input type="email" placeholder="Email *"></div>
+										<div class="col-md-6">
+											<select class="form-control" id="exampleSelect1">
+										      <option>Service you’re looking for?</option>
+										      <option>Business Services</option>
+										      <option>Consumer Product</option>
+										      <option>Financial Services</option>
+										      <option>Software Research</option>
+										    </select>
+										</div>
+										<div class="col-12"><textarea placeholder="Message"></textarea></div>
+									</div> <!-- /.row -->
+									<button class="theme-button-one">GET A QUOTES</button>
+								</form>
+							</div> <!-- /.form-wrapper -->
+						</div> <!-- /.col- -->
+					</div> <!-- /.main-content -->
+				</div> <!-- /.container -->
+			</div> <!-- /.consultation-form -->
+
+
+
+			<!--
+			=====================================================
+				Partner Slider
+			=====================================================
+			-->
+			<div class="partner-section bg-color">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-sm-4 col-12">
+							<h6>OUR <br>PARTNERS</h6>
+						</div>
+						<div class="col-md-9 col-sm-8 col-12">
+							<div class="partner-slider">
+								<div class="item"><img src="images/logo/p-1.png" alt=""></div>
+								<div class="item"><img src="images/logo/p-2.png" alt=""></div>
+								<div class="item"><img src="images/logo/p-3.png" alt=""></div>
+								<div class="item"><img src="images/logo/p-4.png" alt=""></div>
+								<div class="item"><img src="images/logo/p-5.png" alt=""></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> <!-- /.partner-section -->
+
+
+			<!--
+			=====================================================
+				Footer
+			=====================================================
+			-->
+			<footer class="theme-footer-one">
+				<div class="top-footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-3 col-lg-4 col-sm-6 about-widget">
+								<h6 class="title">About OUR Consulting</h6>
+								<p>That started from this tropic port aboard this tiny ship today still want by theam government they survive on up to thetre east side to a deluxe as soldiers of artics fortune.</p>
+								<div class="queries"><i class="flaticon-phone-call"></i> Any Queries : <a href="#">(+1) 234 567 900</a></div>
+							</div> <!-- /.about-widget -->
+							<div class="col-xl-4 col-lg-3 col-sm-6 footer-recent-post">
+								<h6 class="title">RECENT POSTS</h6>
+								<ul>
+									<li class="clearfix">
+										<img src="images/blog/1.jpg" alt="" class="float-left">
+										<div class="post float-left">
+											<a href="blog-details.html">Till wanted by theam govern they survive as soldiers.</a>
+											<div class="date"><i class="fa fa-calendar-o" aria-hidden="true"></i> Feb 06, 2018</div>
+										</div>
+									</li>
+									<li class="clearfix">
+										<img src="images/blog/2.jpg" alt="" class="float-left">
+										<div class="post float-left">
+											<a href="blog-details.html">World don't move to beat of just one drum.</a>
+											<div class="date"><i class="fa fa-calendar-o" aria-hidden="true"></i> Mar 20, 2018</div>
+										</div>
+									</li>
+								</ul>
+							</div> <!-- /.footer-recent-post -->
+							<div class="col-xl-2 col-lg-3 col-sm-6 footer-list">
+								<h6 class="title">SOLUTIONS</h6>
+								<ul>
+									<li><a href="#">Travel and Aviation</a></li>
+									<li><a href="#">Business Services</a></li>
+									<li><a href="#">Consumer Products</a></li>
+									<li><a href="#">Financial Services</a></li>
+									<li><a href="#">Software Research</a></li>
+									<li><a href="#">Quality Resourcing</a></li>
+								</ul>
+							</div> <!-- /.footer-list -->
+							<div class="col-xl-3 col-lg-2 col-sm-6 footer-newsletter">
+								<h6 class="title">NEWSLETTER</h6>
+								<form action="#">
+									<input type="text" placeholder="Name *">
+									<input type="email" placeholder="Email *">
+									<button class="theme-button-one">SUBSCRIBE</button>
+								</form>
+							</div>
+						</div> <!-- /.row -->
+					</div> <!-- /.container -->
+				</div> <!-- /.top-footer -->
+				<div class="bottom-footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 col-12"><p>&copy; Copyrights 2018. All Rights Reserved.</p></div>
+							<div class="col-md-6 col-12">
+								<ul>
+									<li><a href="about.html">About</a></li>
+									<li><a href="service.html">Solutions</a></li>
+									<li><a href="#">FAQ’s</a></li>
+									<li><a href="contact.html">Contact</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div> <!-- /.bottom-footer -->
+			</footer> <!-- /.theme-footer -->
+			
+
+	        
+
+	        <!-- Scroll Top Button -->
+			<button class="scroll-top tran3s">
+				<i class="fa fa-angle-up" aria-hidden="true"></i>
+			</button>
+			
+
+
+		<!-- Optional JavaScript _____________________________  -->
+
+    	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    	<!-- jQuery -->
+		<script src="vendor/jquery.2.2.3.min.js"></script>
+		<!-- Popper js -->
+		<script src="vendor/popper.js/popper.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<!-- Camera Slider -->
+		<script src='vendor/Camera-master/scripts/jquery.mobile.customized.min.js'></script>
+	    <script src='vendor/Camera-master/scripts/jquery.easing.1.3.js'></script> 
+	    <script src='vendor/Camera-master/scripts/camera.min.js'></script>
+	    <!-- menu  -->
+		<script src="vendor/menu/src/js/jquery.slimmenu.js"></script>
+		<!-- WOW js -->
+		<script src="vendor/WOW-master/dist/wow.min.js"></script>
+		<!-- owl.carousel -->
+		<script src="vendor/owl-carousel/owl.carousel.min.js"></script>
+		<!-- js count to -->
+		<script src="vendor/jquery.appear.js"></script>
+		<script src="vendor/jquery.countTo.js"></script>
+		<!-- Fancybox -->
+		<script src="vendor/fancybox/dist/jquery.fancybox.min.js"></script>
+
+		<!-- Theme js -->
+		<script src="js/theme.js"></script>
+		</div> <!-- /.main-page-wrapper -->
+	</body>
 </html>
