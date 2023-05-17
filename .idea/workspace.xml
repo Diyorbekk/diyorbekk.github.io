@@ -1,78 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c06f0eda-317b-42c8-bb99-9286c82517d5" name="Default Changelist" comment="" />
+    <list default="true" id="96f2cc5b-07e1-4861-bffb-5c503d2d0d36" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/images/home/slide-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/diyorbekk.github.io.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/personal-info.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/logo/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/logo/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-        <option value="CSS File" />
-        <option value="HTML File" />
-      </list>
-    </option>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="2PsUGSnM0dLCJtbc34KEybxPaLk" />
+  <component name="ProjectId" id="2Pv36yy0kMO2lUUy3EtRhu0hJlF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
+    "last_opened_file_path": "D:/Github/diyorbekk.github.io/images/home",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Diyor\Github\personal-info\vendor" />
-      <recent name="E:\Diyor\Github\personal-info\js" />
-      <recent name="E:\Diyor\Github\personal-info\images" />
-      <recent name="E:\Diyor\Github\personal-info\fonts" />
+      <recent name="D:\Github\diyorbekk.github.io\images\home" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c06f0eda-317b-42c8-bb99-9286c82517d5" name="Default Changelist" comment="" />
-      <created>1684245186409</created>
+      <changelist id="96f2cc5b-07e1-4861-bffb-5c503d2d0d36" name="Changes" comment="" />
+      <created>1684323556710</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1684245186409</updated>
-      <workItem from="1684245190111" duration="19195000" />
-      <workItem from="1684298471445" duration="1321000" />
+      <updated>1684323556710</updated>
+      <workItem from="1684323557900" duration="118000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="987" y="435" width="585" height="530" key="find.popup" timestamp="1684264563330">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="987" y="435" width="585" height="530" key="find.popup/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1684264563330" />
-    <state x="936" y="353" width="670" height="676" key="search.everywhere.popup" timestamp="1684265911458">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="936" y="353" width="670" height="676" key="search.everywhere.popup/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1684265911458" />
   </component>
 </project>
