@@ -165,7 +165,7 @@
  ul {list-style-type: none;}
  body a {text-decoration: none;color: #232323; display: inline-block;font-family: 'Nunito Sans', sans-serif;}
  a:hover,a:focus,a:visited {text-decoration: none; outline: none;}
- img {max-width: 100%; display: block;}
+ img {max-width: 100%; display: block;object-fit: cover;height: 100%}
  button {border:none;outline: none;box-shadow: none;display: block; padding: 0;cursor: pointer;}
  button:focus {outline: none;}
  input,textarea {outline: none; box-shadow: none;transition: all 0.3s ease-in-out;}
