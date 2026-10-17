@@ -1,14 +1,780 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Hello word</title>
-    </head>
-    <body>
-        Githubdagi sahifamga xush kelibsiz! Bu yerda siz mening loyihalarim,
-        kodlarim va boshqa qiziqarli narsalarni topishingiz mumkin. Mening
-        maqsadim dasturlash va texnologiyalar bo'yicha bilimlarimni boshqalar
-        bilan bo'lishishdir.
-    </body>
+<html lang="uz" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diyorbek | Full-Stack Dasturchi & Muhandis</title>
+  
+  <!-- SEO va ijtimoiy tarmoqlar uchun ma'lumotlar -->
+  <meta name="description" content="Ilhomov Diyorbek - Full-Stack dasturchi. 3+ yillik tajriba, zamonaviy veb-ilovalar, backend tizimlar va sifatli loyihalar portfoliyasi.">
+  <meta name="keywords" content="Diyorbek, Full-Stack dasturchi, portfolio, web developer, React, Node.js, Toshkent">
+  <meta name="author" content="Ilhomov Diyorbek">
+
+  <!-- Google Fonts shrifti -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Asosiy stillar fayli -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Orqa fondagi chiroyli nurli sharlar (Glow effect) -->
+  <div class="ambient-glow">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <!-- ==========================================================================
+       TEPADAGI NAVIGATSIYA (NAVBAR)
+       ========================================================================== -->
+  <header class="navbar">
+    <div class="container nav-wrapper">
+      <a href="#hero" class="brand-logo" id="brandLogo">
+        <span>Diyorbek</span><span class="dot">.</span>
+      </a>
+
+      <!-- Asosiy menyu havolalari -->
+      <nav class="nav-links" id="navLinks">
+        <a href="#hero" class="nav-link active">Asosiy</a>
+        <a href="#haqimda" class="nav-link">Men haqimda</a>
+        <a href="#skills" class="nav-link">Ko'nikmalar</a>
+        <a href="#tajriba" class="nav-link">Tajriba</a>
+        <a href="#loyihalar" class="nav-link">Loyihalar</a>
+        <a href="#boglanish" class="nav-link">Bog'lanish</a>
+      </nav>
+
+      <!-- O'ng tarafdagi knopkalar -->
+      <div class="nav-actions">
+        <!-- Qorong'i / Yorug' rejim knopkasi -->
+        <button class="theme-btn" id="themeToggle" title="Temani almashtirish" aria-label="Tema almashtirish">
+          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <a href="#boglanish" class="btn btn-primary" style="padding: 9px 18px; font-size: 0.88rem;">Aloqa</a>
+
+        <!-- Mobil menyu knopkasi -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menyuni ochish">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         1. HERO BO'LIMI - Bosh sahifa va qisqacha tanishtiruv
+         ========================================================================== -->
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <!-- Chap tarafdagi matn va tugmalar -->
+        <div class="hero-content">
+          <div class="hero-status">
+            <span class="status-pulse"></span>
+            <span>Yangi loyihalar va takliflar uchun ochiqman</span>
+          </div>
+
+          <h1 class="hero-title">
+            Salom, men <br>
+            <span class="gradient-text">Ilhomov Diyorbek</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            3+ yildan beri zamonaviy, xavfsiz va yuqori yuklamalarga chidamli veb-ilovalar ishlab chiqaman. Full-Stack arxitektura va qulay foydalanuvchi interfeyslari yaratish bo'yicha mutaxassisman.
+          </p>
+
+          <div class="hero-btns">
+            <a href="#loyihalar" class="btn btn-primary" id="btnExploreProjects">
+              <span>Loyihalarni ko'rish</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+            <a href="#boglanish" class="btn btn-secondary" id="btnContactMe">
+              <span>Bog'lanish</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Raqamli natijalar va statistika -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-num" data-target="3" data-suffix="+">3+</span>
+              <span class="stat-label">Yillik tajriba</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" data-target="25" data-suffix="+">25+</span>
+              <span class="stat-label">Muvaffaqiyatli loyiha</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" data-target="15" data-suffix="+">15+</span>
+              <span class="stat-label">Mamnun mijoz</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" data-target="99" data-suffix="%">99%</span>
+              <span class="stat-label">Sifat & Toza kod</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- O'ng tarafdagi interaktiv profil vizuali -->
+        <div class="hero-visual">
+          <div class="profile-card-wrapper">
+            <div class="profile-card">
+              <div class="profile-header">
+                <div class="avatar-box">
+                  <div class="avatar-inner">D</div>
+                </div>
+                <div class="profile-meta">
+                  <h3>Diyorbek</h3>
+                  <p>Full-Stack Dasturchi</p>
+                </div>
+              </div>
+
+              <div class="profile-tags">
+                <span class="code-tag">React.js</span>
+                <span class="code-tag">Node.js</span>
+                <span class="code-tag">Next.js</span>
+                <span class="code-tag">TypeScript</span>
+                <span class="code-tag">PostgreSQL</span>
+              </div>
+
+              <!-- Mini kod oynasi (Toshkentcha: Dasturchi profili kod ko'rinishida) -->
+              <div class="code-window">
+                <div class="code-window-bar">
+                  <span class="code-dot dot-red"></span>
+                  <span class="code-dot dot-yellow"></span>
+                  <span class="code-dot dot-green"></span>
+                </div>
+                <code>
+                  <span class="code-keyword">const</span> <span class="code-var">developer</span> = {<br>
+                  &nbsp;&nbsp;name: <span class="code-string">"Ilhomov Diyorbek"</span>,<br>
+                  &nbsp;&nbsp;tajriba: <span class="code-string">"3+ yil"</span>,<br>
+                  &nbsp;&nbsp;stack: [<span class="code-string">"JS/TS"</span>, <span class="code-string">"React"</span>, <span class="code-string">"Node"</span>],<br>
+                  &nbsp;&nbsp;holati: <span class="code-string">"Hozir ochiqman 🚀"</span><br>
+                  };
+                </code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         2. MEN HAQIMDA VA ISH TAMOYILLARI
+         ========================================================================== -->
+    <section id="haqimda">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Tanishuv</span>
+          <h2 class="section-title">Men haqimda</h2>
+          <p class="section-desc">Har bitta loyihaga shunchaki kod deb emas, balki biznesga foyda keltiradigan tayyor mahsulot sifatida qarayman.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- O'zim haqimda matn -->
+          <div class="about-card">
+            <h3>Salom! Men Diyorbekman 👋</h3>
+            <p>
+              Dasturlash sohasida 3 yildan ortiq vaqtdan beri faoliyat yuritib kelyapman. Shu vaqt mobaynida kichik startaplardan tortib, o'rta va yirik hajmdagi murakkab biznes tizimlarigacha bo'lgan loyihalarni noldan ishlab chiqdim.
+            </p>
+            <p>
+              Asosiy e'tiborim — kodning tozaligi, arxitekturaning kengayuvchanligi (scalability) va foydalanuvchiga maksimal qulay bo'lgan tezkor interfeyslar (UI/UX) yaratishdir. Har kuni yangi texnologiyalarni o'rganish va o'z bilimlarimni amaliyotda sinab ko'rishdan zavqlanaman.
+            </p>
+
+            <div class="principles-list">
+              <div class="principle-item">
+                <div class="principle-icon">⚡</div>
+                <h4>Yuqori tezlik</h4>
+                <p>Tez ochiladigan va optimallashgan yechimlar</p>
+              </div>
+              <div class="principle-item">
+                <div class="principle-icon">🛡️</div>
+                <h4>Ishonchli xavfsizlik</h4>
+                <p>Ma'lumotlar himoyasi va xavfsiz arxitektura</p>
+              </div>
+              <div class="principle-item">
+                <div class="principle-icon">🎨</div>
+                <h4>Zamonaviy UI</h4>
+                <p>Foydalanuvchiga yoqadigan qulay dizayn</p>
+              </div>
+              <div class="principle-item">
+                <div class="principle-icon">📈</div>
+                <h4>Masshtablilik</h4>
+                <p>Katta yuklamalarni ko'tara oladigan tizim</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==========================================================================
+               3. TAJRIBA (TIMELINE)
+               ========================================================================== -->
+          <div class="timeline-wrapper" id="tajriba">
+            <h3 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 24px;">Ish tajribasi tarixi</h3>
+
+            <div class="timeline">
+              <!-- 1-bosqich -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-period">2024 — Hozirgacha</span>
+                  <h4 class="timeline-role">Lead / Senior Full-Stack Dasturchi</h4>
+                  <div class="timeline-company">Mustaqil loyihalar & Startaplar</div>
+                  <p class="timeline-desc">
+                    Murakkab SaaS platformalar, to'lov tizimlari (Payme, Click, Stripe) integratsiyasi va yuqori yuklamali API xizmatlarini ishlab chiqish.
+                  </p>
+                </div>
+              </div>
+
+              <!-- 2-bosqich -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-period">2022 — 2024</span>
+                  <h4 class="timeline-role">Middle Web Developer</h4>
+                  <div class="timeline-company">IT Kompaniya / Agentlik</div>
+                  <p class="timeline-desc">
+                    React va Node.js texnologiyalarida 15 dan ortiq yirik e-commerce va ERP loyihalarni muvaffaqiyatli topshirish. Ma'lumotlar bazasi tezligini 40% ga optimallashtirish.
+                  </p>
+                </div>
+              </div>
+
+              <!-- 3-bosqich -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-period">2021 — 2022</span>
+                  <h4 class="timeline-role">Junior Frontend Dasturchi</h4>
+                  <div class="timeline-company">Freelance & Amaliyot</div>
+                  <p class="timeline-desc">
+                    HTML5, CSS3, JavaScript va React asosida moslashuvchan (responsive) sahifalar, landing pagelar va Telegram bot interfeyslarini tayyorlash.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. KO'NIKMALAR VA TEXNOLOGIYALAR (SKILLS)
+         ========================================================================== -->
+    <section id="skills" style="background: rgba(255, 255, 255, 0.015);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Texnologiyalar</span>
+          <h2 class="section-title">Mening qobiliyatlarim</h2>
+          <p class="section-desc">Loyiha xususiyatiga qarab eng to'g'ri va samarali texnologiyalardan foydalanaman.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- 1. Frontend -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3>Frontend</h3>
+            </div>
+            <div class="skill-items">
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">JavaScript (ES6+) / TypeScript</span>
+                  <span class="skill-pct">95%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">React.js & Next.js</span>
+                  <span class="skill-pct">92%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 92%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">HTML5, CSS3, SCSS & Tailwind</span>
+                  <span class="skill-pct">96%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 96%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Redux Toolkit / Zustand</span>
+                  <span class="skill-pct">88%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 88%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Backend -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </div>
+              <h3>Backend</h3>
+            </div>
+            <div class="skill-items">
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Node.js & Express.js</span>
+                  <span class="skill-pct">90%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">RESTful API & GraphQL</span>
+                  <span class="skill-pct">92%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 92%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Python / Fast-API</span>
+                  <span class="skill-pct">82%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 82%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">WebSockets & Real-time</span>
+                  <span class="skill-pct">86%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 86%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Database & Vositalar -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                </svg>
+              </div>
+              <h3>Ma'lumotlar bazasi & DevOps</h3>
+            </div>
+            <div class="skill-items">
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">PostgreSQL & Prisma / TypeORM</span>
+                  <span class="skill-pct">90%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">MongoDB & Redis</span>
+                  <span class="skill-pct">85%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Docker & CI/CD avtomatlashtirish</span>
+                  <span class="skill-pct">80%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Git, GitHub & Linux Server</span>
+                  <span class="skill-pct">94%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 94%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. LOYIHALAR BO'LIMI (PORTFOLIO PROEKTLAR)
+         ========================================================================== -->
+    <section id="loyihalar">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Portfolio</span>
+          <h2 class="section-title">Bajarilgan loyihalar</h2>
+          <p class="section-desc">Real biznes masalalarini hal qilgan va foydalanuvchilar tomonidan faol ishlatilayotgan ishlarimdan namunalar.</p>
+        </div>
+
+        <!-- Filtr tugmalari -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">Barchasi</button>
+          <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+          <button class="filter-btn" data-filter="frontend">Frontend</button>
+          <button class="filter-btn" data-filter="bot">Telegram Bot & API</button>
+        </div>
+
+        <!-- Proektlar kartochkalari -->
+        <div class="projects-grid" id="projectsContainer">
+          
+          <!-- Loyiha 1 -->
+          <div class="project-card" data-category="fullstack">
+            <div class="project-banner" style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);">
+              <div class="project-banner-bg">🛍️</div>
+              <span class="project-badge-tag">Full-Stack</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">NextGen E-Commerce</h3>
+              <p class="project-desc">
+                Zamonaviy onlayn gipermarket platformasi. To'liq savatcha, Click va Payme to'lov tizimlari, buyurtmalarni kuzatish va qulay admin paneli mavjud.
+              </p>
+              <div class="project-techs">
+                <span class="tech-tag">Next.js 14</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Tailwind</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Diyorbekk" target="_blank" rel="noopener noreferrer" class="proj-link">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+                <a href="#loyihalar" class="proj-link" style="color: var(--accent-cyan);">
+                  <span>Demo ko'rish ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Loyiha 2 -->
+          <div class="project-card" data-category="fullstack">
+            <div class="project-banner" style="background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);">
+              <div class="project-banner-bg">📊</div>
+              <span class="project-badge-tag">Full-Stack</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">SaaS CRM & Analytics</h3>
+              <p class="project-desc">
+                Biznes jarayonlarini avtomatlashtirish va mijozlar bilan ishlash tizimi. Real-vaqtdagi analitika grafiklari, xodimlar roli va moliyaviy hisobotlar.
+              </p>
+              <div class="project-techs">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Express.js</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Chart.js</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Diyorbekk" target="_blank" rel="noopener noreferrer" class="proj-link">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+                <a href="#loyihalar" class="proj-link" style="color: var(--accent-cyan);">
+                  <span>Demo ko'rish ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Loyiha 3 -->
+          <div class="project-card" data-category="frontend">
+            <div class="project-banner" style="background: linear-gradient(135deg, #4a044e 0%, #701a75 100%);">
+              <div class="project-banner-bg">✨</div>
+              <span class="project-badge-tag">Frontend</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">AI Assistant & Chat UI</h3>
+              <p class="project-desc">
+                Tezkor va qulay interfeysga ega sun'iy intellekt chat ilovasi. Markdown render, kod nusxalash, ovozli xabarlar va tarixni saqlash imkoniyati.
+              </p>
+              <div class="project-techs">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">WebSockets</span>
+                <span class="tech-tag">CSS Modules</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Diyorbekk" target="_blank" rel="noopener noreferrer" class="proj-link">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+                <a href="#loyihalar" class="proj-link" style="color: var(--accent-cyan);">
+                  <span>Demo ko'rish ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Loyiha 4 -->
+          <div class="project-card" data-category="bot">
+            <div class="project-banner" style="background: linear-gradient(135deg, #172554 0%, #1e40af 100%);">
+              <div class="project-banner-bg">🤖</div>
+              <span class="project-badge-tag">Telegram Bot</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">E-Commerce Telegram WebApp</h3>
+              <p class="project-desc">
+                To'g'ridan-to'g'ri Telegram ichida ochiladigan do'kon mini-ilovasi (TMA). Foydalanuvchilar buyurtma berishi, to'lov qilishi va kurerlik xizmati bilan ulanishi mumkin.
+              </p>
+              <div class="project-techs">
+                <span class="tech-tag">Telegram API</span>
+                <span class="tech-tag">React WebApp</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Redis</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Diyorbekk" target="_blank" rel="noopener noreferrer" class="proj-link">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+                <a href="#loyihalar" class="proj-link" style="color: var(--accent-cyan);">
+                  <span>Demo ko'rish ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Loyiha 5 -->
+          <div class="project-card" data-category="fullstack">
+            <div class="project-banner" style="background: linear-gradient(135deg, #78350f 0%, #92400e 100%);">
+              <div class="project-banner-bg">🌾</div>
+              <span class="project-badge-tag">Full-Stack</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">AgroPlatform B2B Marketplace</h3>
+              <p class="project-desc">
+                Qishloq xo'jaligi maxsulotlarini ulgurji sotuvchilar va xaridorlarni birlashtiruvchi elektron savdo platformasi. Narxlar dinamikasi va shartnomalar tizimi.
+              </p>
+              <div class="project-techs">
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">NestJS</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Docker</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Diyorbekk" target="_blank" rel="noopener noreferrer" class="proj-link">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+                <a href="#loyihalar" class="proj-link" style="color: var(--accent-cyan);">
+                  <span>Demo ko'rish ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Loyiha 6 -->
+          <div class="project-card" data-category="frontend">
+            <div class="project-banner" style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%);">
+              <div class="project-banner-bg">📋</div>
+              <span class="project-badge-tag">Frontend</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">TaskFlow - Jamoa Doskasi</h3>
+              <p class="project-desc">
+                Loyiha vazifalarini rejalashtirish va kuzatib borish uchun qulay Kanban doskasi. Drag-and-drop funksiyasi, teglar va muddat eslatmalari bilan jihozlangan.
+              </p>
+              <div class="project-techs">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">DnD-Kit</span>
+                <span class="tech-tag">Zustand</span>
+                <span class="tech-tag">Tailwind</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Diyorbekk" target="_blank" rel="noopener noreferrer" class="proj-link">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+                <a href="#loyihalar" class="proj-link" style="color: var(--accent-cyan);">
+                  <span>Demo ko'rish ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. BOG'LANISH BO'LIMI (CONTACT)
+         ========================================================================== -->
+    <section id="boglanish" style="background: rgba(255, 255, 255, 0.015);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Aloqa</span>
+          <h2 class="section-title">Keling, gaplashamiz!</h2>
+          <p class="section-desc">Yangi loyiha, ish taklifi yoki shunchaki fikr almashish uchun menga bemalol yoza olasiz.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Chap taraf: Aloqa manzillari -->
+          <div class="contact-info">
+            <div class="contact-card">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>Elektron pochta</h4>
+                <a href="mailto:ilhomovdiyor70@gmail.com">ilhomovdiyor70@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>Telegram orqali yozish</h4>
+                <a href="https://t.me/diyorbekk" target="_blank" rel="noopener noreferrer">@diyorbekk</a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>GitHub profil</h4>
+                <a href="https://github.com/Diyorbekk" target="_blank" rel="noopener noreferrer">github.com/Diyorbekk</a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>Manzil</h4>
+                <p>Toshkent shahri, O'zbekiston</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- O'ng taraf: Xabar yuborish formasi -->
+          <div class="contact-form-wrapper">
+            <h3>Menga to'g'ridan-to'g'ri xabar qoldiring</h3>
+            <p>Formani to'ldirishingiz bilan imkon qadar tezroq aloqaga chiqaman.</p>
+
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="userName" class="form-label">Ismingiz</label>
+                <input type="text" id="userName" class="form-control" placeholder="Masalan: Sardor" required>
+              </div>
+
+              <div class="form-group">
+                <label for="userEmail" class="form-label">Email manzilingiz</label>
+                <input type="email" id="userEmail" class="form-control" placeholder="nomingiz@mail.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="userMessage" class="form-label">Xabaringiz</label>
+                <textarea id="userMessage" class="form-control" placeholder="Loyiha g'oyasi yoki savolingizni yozing..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <span>Xabarni yuborish</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+
+              <!-- Muvaffaqiyatli yuborilgandagi toast xabarnoma -->
+              <div class="toast-msg" id="toastMsg">
+                <span>✅ Rahmat! Xabaringiz qabul qilindi, tez orada javob yozaman.</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       7. FOOTER (Saytning eng pasti)
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-copy">
+        &copy; 2026 <strong>Ilhomov Diyorbek</strong>. Barcha huquqlar himoyalangan.
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://github.com/Diyorbekk" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="mailto:ilhomovdiyor70@gmail.com" class="social-btn" title="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </a>
+        <a href="https://t.me/diyorbekk" target="_blank" rel="noopener noreferrer" class="social-btn" title="Telegram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Asosiy JS skript -->
+  <script src="script.js"></script>
+</body>
 </html>
