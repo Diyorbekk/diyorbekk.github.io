@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow Pro | Diyorbek Frontend Loyihasi</title>
+  
+  <!-- Shriftlar -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       TaskFlow Frontend Loyihasi - Toshkentcha stillar
+       ========================================================================== */
+    :root {
+      --bg-dark: #0b0f19;
+      --bg-card: #131b2e;
+      --bg-column: #0f172a;
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #6366f1;
+      --accent-gradient: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+      --accent-cyan: #06b6d4;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Topbar */
+    .topbar {
+      background: rgba(19, 27, 46, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 14px 24px;
+    }
+
+    .topbar-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+
+    .back-btn:hover {
+      color: #fff;
+      border-color: var(--accent);
+      transform: translateX(-3px);
+    }
+
+    .brand-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    .live-badge {
+      background: rgba(6, 182, 212, 0.15);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      padding: 3px 10px;
+      border-radius: 99px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .btn-add-task {
+      background: var(--accent-gradient);
+      color: #fff;
+      border: none;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn-add-task:hover {
+      box-shadow: 0 4px 18px rgba(99, 102, 241, 0.4);
+      transform: translateY(-2px);
+    }
+
+    /* Asosiy konteyner */
+    .app-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 24px;
+      width: 100%;
+      flex: 1;
+    }
+
+    /* Statistika paneli */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .stat-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 18px 22px;
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .stat-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+    }
+
+    /* Qidiruv va filtr */
+    .controls-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .search-field {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 18px;
+      border-radius: 8px;
+      outline: none;
+      font-size: 0.9rem;
+      width: 280px;
+    }
+
+    .search-field:focus {
+      border-color: var(--accent);
+    }
+
+    /* Kanban Ustunlari (Columns) */
+    .kanban-board {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      align-items: flex-start;
+    }
+
+    .kanban-col {
+      background: var(--bg-column);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      min-height: 480px;
+    }
+
+    .col-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .col-title {
+      font-size: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .col-count {
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 0.78rem;
+      padding: 2px 8px;
+      border-radius: 99px;
+      font-weight: 700;
+    }
+
+    .task-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      flex: 1;
+    }
+
+    /* Vazifa kartochkasi */
+    .task-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .task-card:hover {
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .task-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .tag-frontend { background: rgba(99, 102, 241, 0.2); color: #818cf8; }
+    .tag-backend { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+    .tag-ui { background: rgba(236, 72, 153, 0.2); color: #f472b6; }
+    .tag-bug { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+
+    .priority-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .priority-high { color: #ef4444; }
+    .priority-mid { color: #f59e0b; }
+    .priority-low { color: #10b981; }
+
+    .task-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .task-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .task-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .action-arrows {
+      display: flex;
+      gap: 6px;
+    }
+
+    .arrow-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .arrow-btn:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .delete-btn {
+      background: none;
+      border: none;
+      color: #ef4444;
+      font-size: 0.8rem;
+      cursor: pointer;
+      font-weight: 600;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .delete-btn:hover {
+      opacity: 1;
+    }
+
+    /* Modal (Yangi vazifa qo'shish) */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: 20px;
+    }
+
+    .modal-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      width: 100%;
+      max-width: 460px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      background: var(--bg-column);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 8px;
+      outline: none;
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .form-textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--accent-gradient);
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .kanban-board { grid-template-columns: 1fr; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tepadagi panel -->
+  <header class="topbar">
+    <div class="topbar-container">
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="../../index.html#loyihalar" class="back-btn">
+          ← Portfolioga qaytish
+        </a>
+        <div class="brand-box">
+          <span>TaskFlow Workspace</span>
+          <span class="live-tag live-badge">Frontend Demo</span>
+        </div>
+      </div>
+
+      <button class="btn-add-task" id="openModalBtn">
+        <span>+ Yangi Vazifa</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="app-container">
+    
+    <!-- Statistika kartalari -->
+    <div class="stats-bar">
+      <div class="stat-box">
+        <span class="stat-label">Jami Vazifalar</span>
+        <span class="stat-value" id="statTotal">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Rejada</span>
+        <span class="stat-value" style="color: var(--accent-cyan);" id="statTodo">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Jarayonda</span>
+        <span class="stat-value" style="color: var(--accent-amber);" id="statProgress">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Bajarildi</span>
+        <span class="stat-value" style="color: var(--accent-emerald);" id="statDone">0</span>
+      </div>
+    </div>
+
+    <!-- Boshqaruv va qidiruv -->
+    <div class="controls-row">
+      <input type="text" id="taskSearchInput" class="search-field" placeholder="Vazifalardan qidirish...">
+      <div style="font-size: 0.88rem; color: var(--text-muted);">
+        ⚡ Vazifalarni strelkalar orqali bir ustundan ikkinchisiga o'tkazing
+      </div>
+    </div>
+
+    <!-- Kanban Doskasi -->
+    <div class="kanban-board">
+      
+      <!-- 1. Rejada ustuni -->
+      <div class="kanban-col">
+        <div class="col-header">
+          <div class="col-title">
+            <span>📋 Rejada</span>
+          </div>
+          <span class="col-count" id="countTodo">0</span>
+        </div>
+        <div class="task-list" id="colTodoList"></div>
+      </div>
+
+      <!-- 2. Jarayonda ustuni -->
+      <div class="kanban-col">
+        <div class="col-header">
+          <div class="col-title">
+            <span>⚡ Jarayonda</span>
+          </div>
+          <span class="col-count" id="countProgress">0</span>
+        </div>
+        <div class="task-list" id="colProgressList"></div>
+      </div>
+
+      <!-- 3. Bajarildi ustuni -->
+      <div class="kanban-col">
+        <div class="col-header">
+          <div class="col-title">
+            <span>✅ Bajarildi</span>
+          </div>
+          <span class="col-count" id="countDone">0</span>
+        </div>
+        <div class="task-list" id="colDoneList"></div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Yangi vazifa qo'shish modali -->
+  <div class="modal-overlay" id="taskModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 style="font-size: 1.2rem; font-weight: 700;">Yangi vazifa yaratish</h3>
+        <button class="modal-close" id="closeModalBtn">&times;</button>
+      </div>
+
+      <form id="newTaskForm">
+        <div class="form-group">
+          <label for="taskTitle">Vazifa nomi</label>
+          <input type="text" id="taskTitle" class="form-input" placeholder="Masalan: Yangi modal oynasini ulash" required>
+        </div>
+
+        <div class="form-group">
+          <label for="taskDesc">Tavsifi</label>
+          <textarea id="taskDesc" class="form-textarea" placeholder="Vazifa haqida qisqacha ma'lumot..."></textarea>
+        </div>
+
+        <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div>
+            <label for="taskTag">Toifasi</label>
+            <select id="taskTag" class="form-select">
+              <option value="frontend">Frontend</option>
+              <option value="backend">Backend</option>
+              <option value="ui">UI/UX Dizayn</option>
+              <option value="bug">Xatolik (Bug)</option>
+            </select>
+          </div>
+          <div>
+            <label for="taskPriority">Muhimligi</label>
+            <select id="taskPriority" class="form-select">
+              <option value="high">🔴 Yuqori</option>
+              <option value="mid" selected>🟡 O'rta</option>
+              <option value="low">🟢 Past</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Vazifani qo'shish</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    /* ==========================================================================
+       Toshkentcha: TaskFlow Kanban boshqaruvi va LocalStorage saqlash mexanizmi
+       ========================================================================== */
+    const defaultTasks = [
+      {
+        id: 1,
+        title: "To'lov tizimlari API'sini ulash",
+        desc: "Click va Payme orqali vebhook so'rovlarini qabul qilish va tekshirish.",
+        tag: "backend",
+        priority: "high",
+        status: "todo"
+      },
+      {
+        id: 2,
+        title: "Foydalanuvchi interfeysini qayta loyihalash",
+        desc: "Figma dizayni bo'yicha qorong'i rejim kontrastini oshirish.",
+        tag: "ui",
+        priority: "mid",
+        status: "progress"
+      },
+      {
+        id: 3,
+        title: "Next.js 14 App Router migratsiyasi",
+        desc: "Sahifalar yuklanishini tezlashtirish va SEO meta teglarni to'g'irlash.",
+        tag: "frontend",
+        priority: "high",
+        status: "progress"
+      },
+      {
+        id: 4,
+        title: "Telegram WebApp kesh xatoligini tuzatish",
+        desc: "iOS qurilmalarida kesh sababli ro'y berayotgan vizual muammo bartaraf etildi.",
+        tag: "bug",
+        priority: "low",
+        status: "done"
+      }
+    ];
+
+    // Saqlangan vazifalarni olish yoki standartlarini qo'yish
+    let tasks = JSON.parse(localStorage.getItem('diyor_taskflow')) || defaultTasks;
+
+    function saveTasks() {
+      localStorage.setItem('diyor_taskflow', JSON.stringify(tasks));
+      renderBoard();
+    }
+
+    const colTodoList = document.getElementById('colTodoList');
+    const colProgressList = document.getElementById('colProgressList');
+    const colDoneList = document.getElementById('colDoneList');
+    const taskSearchInput = document.getElementById('taskSearchInput');
+
+    function renderBoard() {
+      const q = taskSearchInput.value.toLowerCase().trim();
+
+      // Ro'yxatlarni tozalash
+      colTodoList.innerHTML = '';
+      colProgressList.innerHTML = '';
+      colDoneList.innerHTML = '';
+
+      let countTodo = 0;
+      let countProgress = 0;
+      let countDone = 0;
+
+      tasks.forEach(task => {
+        const matches = task.title.toLowerCase().includes(q) || task.desc.toLowerCase().includes(q);
+        if (!matches) return;
+
+        if (task.status === 'todo') countTodo++;
+        if (task.status === 'progress') countProgress++;
+        if (task.status === 'done') countDone++;
+
+        const card = document.createElement('div');
+        card.className = 'task-card';
+
+        // Teg va Muhimlik
+        let priorityLabel = '🟡 O\'rta';
+        let priorityClass = 'priority-mid';
+        if (task.priority === 'high') { priorityLabel = '🔴 Yuqori'; priorityClass = 'priority-high'; }
+        if (task.priority === 'low') { priorityLabel = '🟢 Past'; priorityClass = 'priority-low'; }
+
+        // Harakat tugmalari (O'tkazish)
+        let leftBtn = '';
+        let rightBtn = '';
+
+        if (task.status === 'progress') {
+          leftBtn = `<button class="arrow-btn" title="Rejaga qaytarish" onclick="moveTask(${task.id}, 'todo')">←</button>`;
+          rightBtn = `<button class="arrow-btn" title="Bajarildiga o'tkazish" onclick="moveTask(${task.id}, 'done')">→</button>`;
+        } else if (task.status === 'todo') {
+          rightBtn = `<button class="arrow-btn" title="Jarayonga o'tkazish" onclick="moveTask(${task.id}, 'progress')">→</button>`;
+        } else if (task.status === 'done') {
+          leftBtn = `<button class="arrow-btn" title="Jarayonga qaytarish" onclick="moveTask(${task.id}, 'progress')">←</button>`;
+        }
+
+        card.innerHTML = `
+          <div class="task-meta">
+            <span class="tag tag-${task.tag}">${task.tag}</span>
+            <span class="priority-badge ${priorityClass}">${priorityLabel}</span>
+          </div>
+          <div class="task-title">${task.title}</div>
+          <div class="task-desc">${task.desc}</div>
+          <div class="task-actions">
+            <div class="action-arrows">
+              ${leftBtn}
+              ${rightBtn}
+            </div>
+            <button class="delete-btn" onclick="deleteTask(${task.id})">O'chirish</button>
+          </div>
+        `;
+
+        if (task.status === 'todo') colTodoList.appendChild(card);
+        if (task.status === 'progress') colProgressList.appendChild(card);
+        if (task.status === 'done') colDoneList.appendChild(card);
+      });
+
+      // Hisoblagichlarni yangilash
+      document.getElementById('countTodo').textContent = countTodo;
+      document.getElementById('countProgress').textContent = countProgress;
+      document.getElementById('countDone').textContent = countDone;
+
+      document.getElementById('statTotal').textContent = tasks.length;
+      document.getElementById('statTodo').textContent = countTodo;
+      document.getElementById('statProgress').textContent = countProgress;
+      document.getElementById('statDone').textContent = countDone;
+    }
+
+    // Vazifani boshqa ustunga siljitish
+    window.moveTask = function(id, nextStatus) {
+      tasks = tasks.map(t => t.id === id ? { ...t, status: nextStatus } : t);
+      saveTasks();
+    };
+
+    // Vazifani o'chirish
+    window.deleteTask = function(id) {
+      tasks = tasks.filter(t => t.id !== id);
+      saveTasks();
+    };
+
+    // Qidiruv voqeasi
+    taskSearchInput.addEventListener('input', renderBoard);
+
+    // Modalni ochish / yopish
+    const taskModal = document.getElementById('taskModal');
+    const openModalBtn = document.getElementById('openModalBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const newTaskForm = document.getElementById('newTaskForm');
+
+    openModalBtn.addEventListener('click', () => {
+      taskModal.style.display = 'flex';
+      document.getElementById('taskTitle').focus();
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      taskModal.style.display = 'none';
+    });
+
+    taskModal.addEventListener('click', (e) => {
+      if (e.target === taskModal) {
+        taskModal.style.display = 'none';
+      }
+    });
+
+    // Yangi vazifa formasi
+    newTaskForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const title = document.getElementById('taskTitle').value.trim();
+      const desc = document.getElementById('taskDesc').value.trim();
+      const tag = document.getElementById('taskTag').value;
+      const priority = document.getElementById('taskPriority').value;
+
+      if (!title) return;
+
+      const newTask = {
+        id: Date.now(),
+        title,
+        desc: desc || "Tavsif kiritilmagan",
+        tag,
+        priority,
+        status: "todo"
+      };
+
+      tasks.unshift(newTask);
+      saveTasks();
+
+      newTaskForm.reset();
+      taskModal.style.display = 'none';
+    });
+
+    // Dastlabki chizish
+    renderBoard();
+  </script>
+</body>
+</html>

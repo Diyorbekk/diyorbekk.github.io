@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram E-Commerce Bot | Arxitektura & Ishlash Prinsipi</title>
+  
+  <!-- Shriftlar -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       Telegram Bot Arxitekturasi va Simulyatori - Toshkentcha stillar
+       ========================================================================== */
+    :root {
+      --bg-dark: #0a0d14;
+      --bg-card: #121824;
+      --bg-tertiary: #1a2234;
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #229ed9; /* Telegram ko'k rangi */
+      --accent-gradient: linear-gradient(135deg, #0088cc 0%, #00c6ff 100%);
+      --accent-emerald: #10b981;
+      --accent-purple: #a855f7;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Topbar */
+    .topbar {
+      background: rgba(18, 24, 36, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 14px 24px;
+    }
+
+    .topbar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      background: var(--bg-tertiary);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+
+    .back-btn:hover {
+      color: #fff;
+      border-color: var(--accent);
+      transform: translateX(-3px);
+    }
+
+    .badge-bot {
+      background: rgba(34, 158, 217, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(34, 158, 217, 0.3);
+      padding: 4px 12px;
+      border-radius: 99px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    /* Asosiy konteyner */
+    .main-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      flex: 1;
+      width: 100%;
+    }
+
+    .page-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 50px;
+    }
+
+    .page-header h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+
+    .page-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    /* 2 ustunli tuzilma: Chapda Simulyator, O'ngda Sxema va tushuntirish */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      gap: 45px;
+      align-items: flex-start;
+    }
+
+    /* ==========================================================================
+       TELEFON SIMULYATORI (Mockup)
+       ========================================================================== */
+    .phone-mockup {
+      background: #0f141c;
+      border: 8px solid #1e293b;
+      border-radius: 36px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 30px rgba(34, 158, 217, 0.2);
+      display: flex;
+      flex-direction: column;
+      height: 640px;
+      position: sticky;
+      top: 90px;
+    }
+
+    .phone-notch {
+      background: #1e293b;
+      height: 22px;
+      width: 140px;
+      margin: 0 auto;
+      border-bottom-left-radius: 14px;
+      border-bottom-right-radius: 14px;
+    }
+
+    .tg-chat-header {
+      background: #17212b;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .tg-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .tg-bot-info h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .tg-bot-info span {
+      font-size: 0.75rem;
+      color: var(--accent);
+    }
+
+    /* Chat maydoni */
+    .tg-messages-area {
+      flex: 1;
+      padding: 16px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: #0e1621;
+    }
+
+    .msg-bubble {
+      max-width: 82%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      line-height: 1.45;
+      position: relative;
+    }
+
+    .msg-bot {
+      background: #182533;
+      color: #e5e7eb;
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+    }
+
+    .msg-user {
+      background: #2b5278;
+      color: #fff;
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+
+    /* Interaktiv inline tugmalar */
+    .tg-inline-keyboard {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .tg-btn {
+      background: #243547;
+      color: #64b5f6;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 9px 12px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    .tg-btn:hover {
+      background: #2d4259;
+    }
+
+    .tg-btn.webapp-btn {
+      background: #2a6f97;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* WebApp ochilgandagi oyna (Simulation) */
+    .tg-webapp-modal {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      bottom: 0;
+      background: #17212b;
+      z-index: 20;
+      display: none;
+      flex-direction: column;
+      padding: 16px;
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+
+    .webapp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 12px;
+    }
+
+    .webapp-close {
+      background: none;
+      border: none;
+      color: #64b5f6;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .webapp-content {
+      flex: 1;
+      overflow-y: auto;
+      font-size: 0.85rem;
+    }
+
+    .webapp-product-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #202b36;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+
+    /* Chat input pastki qismi */
+    .tg-input-bar {
+      background: #17212b;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .tg-input-box {
+      flex: 1;
+      background: #242f3d;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 18px;
+      color: #fff;
+      font-size: 0.85rem;
+      outline: none;
+    }
+
+    .tg-send-btn {
+      background: none;
+      border: none;
+      color: #64b5f6;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    /* ==========================================================================
+       O'NG TARAF: ARXITEKTURA VA BOSQICHLAR
+       ========================================================================== */
+    .architecture-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .concept-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+    }
+
+    .concept-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .concept-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Bosqichma-bosqich ishlash zanjiri (Pipeline) */
+    .pipeline-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .pipeline-step {
+      display: flex;
+      gap: 16px;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      padding: 18px;
+      border-radius: 12px;
+      transition: all 0.2s;
+    }
+
+    .pipeline-step:hover {
+      border-color: rgba(34, 158, 217, 0.4);
+      transform: translateX(4px);
+    }
+
+    .step-num {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .step-content h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .step-content p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .tech-pill {
+      display: inline-block;
+      background: rgba(34, 158, 217, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(34, 158, 217, 0.3);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    /* Taqqoslash jadvali */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .compare-box {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      padding: 18px;
+      border-radius: 10px;
+    }
+
+    .compare-box h4 {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .compare-box ul {
+      list-style: none;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .compare-box li::before {
+      content: "✔ ";
+      color: var(--accent-emerald);
+      font-weight: 800;
+    }
+
+    .compare-box.bad li::before {
+      content: "✖ ";
+      color: #ef4444;
+    }
+
+    @media (max-width: 950px) {
+      .content-grid { grid-template-columns: 1fr; }
+      .phone-mockup { position: static; max-width: 420px; margin: 0 auto; }
+      .compare-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tepadagi panel -->
+  <header class="topbar">
+    <div class="topbar-container">
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="../../index.html#loyihalar" class="back-btn">
+          ← Portfolioga qaytish
+        </a>
+        <div style="display: flex; align-items: center; gap: 8px; font-weight: 800;">
+          <span>Telegram Bot & WebApp</span>
+          <span class="badge-bot">Arxitektura</span>
+        </div>
+      </div>
+
+      <div style="font-size: 0.88rem; color: var(--text-muted);">
+        Muallif: <strong style="color: #fff;">Ilhomov Diyorbek</strong>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-wrapper">
+    
+    <div class="page-header">
+      <span class="badge-bot" style="margin-bottom: 12px; display: inline-block;">Loyiha tahlili & Mexanizm</span>
+      <h1>Telegram E-Commerce Bot Qanday Ishlaydi?</h1>
+      <p>
+        Zamonaviy Telegram Mini Apps (TMA), Webhook so'rovlari va to'lov tizimlari orqali avtomatlashtirilgan elektron savdo boti qanday qurilganini quyida ko'rishingiz mumkin.
+      </p>
+    </div>
+
+    <div class="content-grid">
+      
+      <!-- CHAP TARAF: INTERAKTIV TELEGRAM TELEFON SIMULYATORI -->
+      <div class="phone-mockup">
+        <div class="phone-notch"></div>
+        
+        <!-- Chat header -->
+        <div class="tg-chat-header">
+          <div class="tg-avatar">🤖</div>
+          <div class="tg-bot-info">
+            <h4>NextGen Market Bot</h4>
+            <span>bot &bull; har doim onlayn</span>
+          </div>
+        </div>
+
+        <!-- Xabarlar maydoni -->
+        <div class="tg-messages-area" id="tgMessages">
+          <div class="msg-bubble msg-bot">
+            Assalomu alaykum, Diyorbek! 👋<br>
+            NextGen do'koniga xush kelibsiz. Kerakli bo'limni tanlang:
+            
+            <div class="tg-inline-keyboard">
+              <button class="tg-btn webapp-btn" id="btnOpenWebapp">🛍 Katalog (Mini App ochish)</button>
+              <button class="tg-btn" onclick="sendQuickReply('orders')">📦 Buyurtmalarim</button>
+              <button class="tg-btn" onclick="sendQuickReply('payment')">💳 To'lov usullari (Click / Payme)</button>
+              <button class="tg-btn" onclick="sendQuickReply('support')">📞 Operator bilan bog'lanish</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- WebApp ochilganda chiqadigan oyna -->
+        <div class="tg-webapp-modal" id="tgWebappModal">
+          <div class="webapp-header">
+            <strong>NextGen Do'kon (TMA)</strong>
+            <button class="webapp-close" id="btnCloseWebapp">Yopish ✕</button>
+          </div>
+          <div class="webapp-content">
+            <p style="color: var(--text-muted); margin-bottom: 12px;">Telegram ichidagi to'liq veb katalog:</p>
+            
+            <div class="webapp-product-row">
+              <div>
+                <strong>MacBook Pro 16'</strong><br>
+                <span style="color: var(--accent-emerald);">24,500,000 so'm</span>
+              </div>
+              <button class="tg-btn" style="padding: 4px 8px;" onclick="orderProductFromWebapp('MacBook Pro')">+ Tanlash</button>
+            </div>
+
+            <div class="webapp-product-row">
+              <div>
+                <strong>iPhone 15 Pro Max</strong><br>
+                <span style="color: var(--accent-emerald);">14,200,000 so'm</span>
+              </div>
+              <button class="tg-btn" style="padding: 4px 8px;" onclick="orderProductFromWebapp('iPhone 15 Pro')">+ Tanlash</button>
+            </div>
+
+            <div class="webapp-product-row">
+              <div>
+                <strong>Sony WH-1000XM5</strong><br>
+                <span style="color: var(--accent-emerald);">4,200,000 so'm</span>
+              </div>
+              <button class="tg-btn" style="padding: 4px 8px;" onclick="orderProductFromWebapp('Sony Headphones')">+ Tanlash</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat inputi -->
+        <div class="tg-input-bar">
+          <input type="text" id="tgInput" class="tg-input-box" placeholder="Xabar yozing (masalan: /start)...">
+          <button class="tg-send-btn" id="btnTgSend">➤</button>
+        </div>
+      </div>
+
+      <!-- O'NG TARAF: ARXITEKTURA VA BOSQICHLAR TUSHUNTIRIShI -->
+      <div class="architecture-wrapper">
+        
+        <!-- 1. Umumiy Konsept -->
+        <div class="concept-card">
+          <h3>⚡ Tizimning Qisqacha Arxitekturasi</h3>
+          <p>
+            Ushbu bot shunchaki oddiy matnli bot emas, balki <strong>Telegram Mini App (TMA)</strong> texnologiyasiga ega to'liq veb-ekotizimdir. Mijoz botdan chiqmasdan turib, xuddi odatiy saytdagidek tovarlarni ko'radi, savatga yig'adi va bir zumda to'lovni amalga oshiradi.
+          </p>
+        </div>
+
+        <!-- 2. Bosqichma-bosqich qanday ishlashi -->
+        <div class="concept-card">
+          <h3>🔄 Bosqichma-bosqich Ishlash Mexanizmi</h3>
+          
+          <div class="pipeline-steps">
+            
+            <!-- 1-bosqich -->
+            <div class="pipeline-step">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <h4>Foydalanuvchi So'rovi (Client)</h4>
+                <p>Mijoz botga buyruq beradi yoki <code>WebApp</code> tugmasini bosadi. Telegram mijozi barcha parametrlarni xavfsiz shifrlangan holda uzatadi.</p>
+                <span class="tech-pill">Telegram Client / React TMA</span>
+              </div>
+            </div>
+
+            <!-- 2-bosqich -->
+            <div class="pipeline-step">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <h4>HTTPS Webhook & Validatsiya</h4>
+                <p>Telegram Bot API serveri bizning Node.js backendimizga darhol webhook POST so'rovini yo'llaydi. So'rov ichidagi <code>initData</code> HMAC-SHA256 yordamida haqiqiyligi tekshiriladi (hujum va soxtalashtirishdan himoya).</p>
+                <span class="tech-pill">Node.js &bull; Express &bull; HMAC-SHA256</span>
+              </div>
+            </div>
+
+            <!-- 3-bosqich -->
+            <div class="pipeline-step">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <h4>Ma'lumotlar Bazasi & Holat Nazorati</h4>
+                <p>PostgreSQL bazasidan mahsulotlar soni (qoldiq) tekshiriladi. Redis orqali har bir foydalanuvchining aktiv sessiyasi va savatchasi keshda saqlanadi (baza ortiqcha yuklanmaydi).</p>
+                <span class="tech-pill">PostgreSQL &bull; Redis &bull; Prisma ORM</span>
+              </div>
+            </div>
+
+            <!-- 4-bosqich -->
+            <div class="pipeline-step">
+              <div class="step-num">4</div>
+              <div class="step-content">
+                <h4>To'lov Shlyuzlari (Click / Payme)</h4>
+                <p>Mijoz to'lov qilishni tanlaganda, to'g'ridan-to'g'ri to'lov havolasi (Invoicing) generatsiya qilinadi. To'lov o'tgach, to'lov tizimidan serverga tasdiq keladi.</p>
+                <span class="tech-pill">Click API &bull; Payme Merchant API</span>
+              </div>
+            </div>
+
+            <!-- 5-bosqich -->
+            <div class="pipeline-step">
+              <div class="step-num">5</div>
+              <div class="step-content">
+                <h4>Avtomatik Xabarnoma & Kuryer Guruhiga Jo'natish</h4>
+                <p>Buyurtma tushishi bilan do'kon adminlarining yopiq Telegram guruhiga kuryer uchun xaridorning geolokatsiyasi va telefon raqami yuboriladi. Mijozga esa elektron chek yetkaziladi.</p>
+                <span class="tech-pill">Telegram Bot Broadcast &bull; Geolocation</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 3. Nega aynan Webhook va WebApp? -->
+        <div class="concept-card">
+          <h3>💡 Texnik Afzalliklar: Nega bu yondashuv tanlangan?</h3>
+          <div class="compare-grid">
+            <div class="compare-box">
+              <h4>🚀 Bizning Yechim (Webhook + WebApp)</h4>
+              <ul>
+                <li>0.1 soniyalik javob tezligi (Instant)</li>
+                <li>Server resursini tejaydi (bo'sh qolmaydi)</li>
+                <li>Foydalanuvchiga zamonaviy ilova qulayligi</li>
+                <li>Xavfsiz to'lovlar va avto-kvitansiya</li>
+              </ul>
+            </div>
+            <div class="compare-box bad">
+              <h4>⚠️ Eskirgan Usul (Long Polling + Oddiy Bot)</h4>
+              <ul>
+                <li>Har soniyada so'rov berib serverni charchatadi</li>
+                <li>Murakkab savatcha yasab bo'lmaydi</li>
+                <li>Rasmlar va mahsulotlarni ko'rish noqulay</li>
+                <li>Yuklama ko'payganda qotishlar ro'y beradi</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <script>
+    /* ==========================================================================
+       Toshkentcha: Telegram bot simulyatorining ishlash kodi
+       ========================================================================== */
+    const tgMessages = document.getElementById('tgMessages');
+    const tgInput = document.getElementById('tgInput');
+    const btnTgSend = document.getElementById('btnTgSend');
+    const tgWebappModal = document.getElementById('tgWebappModal');
+    const btnOpenWebapp = document.getElementById('btnOpenWebapp');
+    const btnCloseWebapp = document.getElementById('btnCloseWebapp');
+
+    // Foydalanuvchi xabar yuborishi
+    function sendUserMessage(text) {
+      if (!text.trim()) return;
+
+      const userBubble = document.createElement('div');
+      userBubble.className = 'msg-bubble msg-user';
+      userBubble.textContent = text;
+      tgMessages.appendChild(userBubble);
+      tgMessages.scrollTop = tgMessages.scrollHeight;
+
+      // Bot avtomatik javob berishi
+      setTimeout(() => {
+        botReplyLogic(text.toLowerCase().trim());
+      }, 600);
+    }
+
+    // Botning javob berish mantiqi
+    function botReplyLogic(input) {
+      let replyHtml = '';
+
+      if (input.includes('/start') || input.includes('salom')) {
+        replyHtml = `
+          Assalomu alaykum! Xush kelibsiz. Do'konimizda qulay xarid qilishingiz mumkin.
+          <div class="tg-inline-keyboard">
+            <button class="tg-btn webapp-btn" onclick="openWebapp()">🛍 Katalog (Mini App)</button>
+            <button class="tg-btn" onclick="sendQuickReply('orders')">📦 Buyurtmalarim</button>
+            <button class="tg-btn" onclick="sendQuickReply('payment')">💳 To'lov usullari</button>
+          </div>
+        `;
+      } else if (input.includes('buyurtma') || input.includes('orders')) {
+        replyHtml = `
+          📦 Sizning oxirgi buyurtmangiz:<br>
+          <b>#ORD-8941: MacBook Pro 16'</b><br>
+          Holati: <span style="color: #10b981;">Yetkazib berilmoqda 🚚</span><br>
+          Kuryer: +998 (90) 123-45-67
+        `;
+      } else if (input.includes('to\'lov') || input.includes('payment') || input.includes('click')) {
+        replyHtml = `
+          💳 <b>Qabul qilinadigan to'lov usullari:</b><br>
+          • Click Up & Click Evolution<br>
+          • Payme va Payme Card<br>
+          • Naqd pul orqali (Kuryerga yetkazilganda)<br>
+          Barcha to'lovlar 100% xavfsiz va fiskal chek beriladi.
+        `;
+      } else if (input.includes('operator') || input.includes('support')) {
+        replyHtml = `
+          📞 Bog'lanish markazi:<br>
+          Telegram: <a href="https://t.me/diyorbekk" target="_blank" style="color: #64b5f6;">@diyorbekk</a><br>
+          Ish vaqti: 09:00 dan 21:00 gacha har kuni.
+        `;
+      } else {
+        replyHtml = `
+          Tushundim! Buyruq qabul qilindi. Mahsulotlarni ko'rish uchun quyidagi tugmani bosing:
+          <div class="tg-inline-keyboard">
+            <button class="tg-btn webapp-btn" onclick="openWebapp()">🛍 Katalogni ochish</button>
+          </div>
+        `;
+      }
+
+      const botBubble = document.createElement('div');
+      botBubble.className = 'msg-bubble msg-bot';
+      botBubble.innerHTML = replyHtml;
+      tgMessages.appendChild(botBubble);
+      tgMessages.scrollTop = tgMessages.scrollHeight;
+    }
+
+    // Tezkor tugmalar orqali xabar yuborish
+    window.sendQuickReply = function(type) {
+      if (type === 'orders') sendUserMessage("Buyurtmalarim haqida ma'lumot bering");
+      if (type === 'payment') sendUserMessage("Qanday to'lov turlari mavjud?");
+      if (type === 'support') sendUserMessage("Operator bilan bog'lanmoqchiman");
+    };
+
+    // WebApp ochish / yopish
+    function openWebapp() {
+      tgWebappModal.style.display = 'flex';
+    }
+
+    btnOpenWebapp.addEventListener('click', openWebapp);
+    btnCloseWebapp.addEventListener('click', () => {
+      tgWebappModal.style.display = 'none';
+    });
+
+    window.openWebapp = openWebapp;
+
+    // WebApp ichidan buyurtma berish simulyatsiyasi
+    window.orderProductFromWebapp = function(prodName) {
+      tgWebappModal.style.display = 'none';
+      
+      const userBubble = document.createElement('div');
+      userBubble.className = 'msg-bubble msg-user';
+      userBubble.textContent = `Buyurtma: ${prodName}`;
+      tgMessages.appendChild(userBubble);
+
+      setTimeout(() => {
+        const botBubble = document.createElement('div');
+        botBubble.className = 'msg-bubble msg-bot';
+        botBubble.innerHTML = `
+          🎉 <b>Rahmat! ${prodName} buyurtmangiz qabul qilindi.</b><br>
+          To'lov havolasi yuborildi: [Click orqali to'lash ↗]<br>
+          Kuryer tez orada siz bilan bog'lanadi.
+        `;
+        tgMessages.appendChild(botBubble);
+        tgMessages.scrollTop = tgMessages.scrollHeight;
+      }, 700);
+    };
+
+    // Xabar jo'natish tugmasi
+    btnTgSend.addEventListener('click', () => {
+      sendUserMessage(tgInput.value);
+      tgInput.value = '';
+    });
+
+    tgInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        sendUserMessage(tgInput.value);
+        tgInput.value = '';
+      }
+    });
+  </script>
+</body>
+</html>
