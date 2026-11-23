@@ -1,9 +1,9 @@
 {
-  "versiya": "0.2.7",
-  "manzil": "https://github.com/Diyorbekk/diyorbekk.github.io/releases/download/kitobchi-v0.2.7/Kitobchi-0.2.7-setup.exe",
-  "sahifa": "https://github.com/Diyorbekk/diyorbekk.github.io/releases/tag/kitobchi-v0.2.7",
+  "versiya": "0.2.8",
+  "manzil": "https://github.com/Diyorbekk/diyorbekk.github.io/releases/download/kitobchi-v0.2.8/Kitobchi-0.2.8-setup.exe",
+  "sahifa": "https://github.com/Diyorbekk/diyorbekk.github.io/releases/tag/kitobchi-v0.2.8",
   "izoh": "",
-  "sha256": "f3982a1d8ee94b14b6f63acf988c3fca58cef452e92af225d5a1d8901121a4ae",
-  "hajm": 120838812,
-  "sana": "2026-11-23T10:43:35+00:00"
+  "sha256": "cab984546c4bcfeb2f6828d1e55d62e6a68b17e5f11a5c70e632d4833b0dfeff",
+  "hajm": 120842592,
+  "sana": "2026-11-23T10:51:18+00:00"
 }
